@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
+import history from '../../utils/history';
 import {NavLink, Link, withRouter} from 'react-router-dom';
 
 class PageHead extends Component {
 
-    componentDidMount() {
-
-    }
-
 
     render() {
 
+        let home = history.location.pathname === '/';
 
         return (
-            <div className="header container" id="header">
+            <div className={home ? 'home-header container' : 'header container'} id="header">
                 <Link to="/" className="logo">BAR FINDER</Link>
             </div>
         );
+
     }
 }
 
