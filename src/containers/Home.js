@@ -13,14 +13,14 @@ class Home extends Component {
         let showSpinner = this.props.showLocationLoader;
 
         return (
-            <div>
-                THIS IS THE HOMEPAGE
-                <ul>
-                    <li><Link to="/LocationDetail" href="">Auf gut Glück</Link></li>
-                    <li><Link to="/LocationsOverview" href="">Bars Suchen</Link></li>
-                </ul>
+            <div className="container">
+                HOMEPAGE
+                <div className="row">
+                    <div className="col-6"><Link to="/LocationDetail" className="btn btn-primary btn-lg">Auf gut Glück</Link></div>
+                    <div className="col-6"><Link to="/LocationsOverview" className="btn btn-primary btn-lg">Bars Suchen</Link></div>
+                </div>
                 {showSpinner &&
-                    <Loader/>
+                <Loader/>
                 }
                 {!showSpinner &&
                 <div>You are here: {this.props.location.latitude + ', ' + this.props.location.longitude}</div>

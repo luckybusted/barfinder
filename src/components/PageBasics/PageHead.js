@@ -12,7 +12,7 @@ class PageHead extends Component {
 
 
         return (
-            <div className="header" id="header">
+            <div className="header container" id="header">
                 <Link to="/" className="logo">BAR FINDER</Link>
             </div>
         );

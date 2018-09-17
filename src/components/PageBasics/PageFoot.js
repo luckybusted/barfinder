@@ -11,7 +11,7 @@ class PageFoot extends Component {
 
 
         return (
-            <div className="footer" id="footer">
+            <div className="footer container" id="footer">
                 PAGE FOOTER
             </div>
         );

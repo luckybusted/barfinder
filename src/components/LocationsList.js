@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import LocationsListItem from "../modules/LocationsListItem";
+import {NavLink, Link, withRouter} from 'react-router-dom';
+import Loader from "../modules/Loader";
+
+let ReactRedux = require('react-redux');
 
 class LocationsList extends Component {
 
@@ -16,27 +20,49 @@ class LocationsList extends Component {
         console.log('THIS PROPS DATA', this.props.data);
 
         let locations = this.props.data.businesses.map((item, i) => {
-                return <li key={'item' + i} className="locationsListItem">
-                    <h3>{item.name}</h3>
-                    {/*<img src={item.image_url} alt=""/>*/}
-                </li>
+                return <div key={'item' + i} className="locationsListItem card col-sm-4">
+                    <img className="card-img-top" src={item.image_url} alt={item.name}/>
+                    <div className="card-body">
+                        <h5><Link to={'/LocationDetail?id=' + item.id}>{item.name}</Link></h5>
+                        <p className="card-text">
+                            {item.location.address1}<br/>
+                            {item.location.zip_code} {item.location.city}
+                        </p>
+                        <Link to={'/LocationDetail?id=' + item.id} className="btn btn-primary">Let's go</Link>
+                    </div>
+
+                </div>
             }
         );
 
-        return <ul>
-            {locations}
-        </ul>
+        return locations
 
     }
 
     render() {
+
+        let showSpinner = this.props.showDataLoader;
+
         return (
-            <div>
-                <h4>LOCATIONS LIST</h4>
-                {this.renderLocations()}
+            <div className="row">
+                {showSpinner &&
+                <Loader/>
+                }
+
+                {!showSpinner &&
+                this.renderLocations()
+                }
             </div>
         );
     }
 }
 
-export default LocationsList;
+export default ReactRedux.connect(
+    (state) => ({
+        showDataLoader: state.dataReducer.showDataLoader
+    }),
+    (dispatch) => ({
+        //setLocation: (location) => dispatch(actions.setLocation(location)),
+        //testCall : (params) => dispatch(actions.testCall(params))
+    })
+)(LocationsList);

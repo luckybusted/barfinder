@@ -7,7 +7,9 @@ import {
     REQUEST_APIDATA,
     RECEIVED_APIDATA,
     GET_LOCATION,
-    DATA_ERROR
+    DATA_ERROR,
+    REQUEST_DETAILDATA,
+    RECEIVED_DETAILDATA
 } from '../actions/action-types';
 
 
@@ -15,8 +17,10 @@ const initialState = {
     errors: '',
     location: '',
     showDataLoader: true,
+    showDetailLoader: true,
     showLocationLoader: true,
-    apiData: {}
+    apiData: {},
+    detailData: {}
 };
 
 function locationCleaner(location){
@@ -50,6 +54,19 @@ const dataReducer = (state = initialState, action) => {
                 ...state,
                 location: action.value,
                 showLocationLoader: false
+            };
+
+        case REQUEST_DETAILDATA:
+            return {
+                ...state,
+                showDetailLoader: true
+            };
+
+        case RECEIVED_DETAILDATA:
+            return {
+                ...state,
+                detailData: action.value,
+                showDetailLoader: false
             };
 
         case DATA_ERROR:

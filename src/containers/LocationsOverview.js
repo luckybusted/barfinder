@@ -46,8 +46,8 @@ class LocationsOverview extends Component {
         let showSpinner = this.props.showDataLoader;
 
         return (
-            <div>
-                <h3>LOCATIONS OVERVIEW</h3>
+            <div className="container">
+                <h3>Bars in deiner Nähe:</h3>
 
                 {this.props.apiData && !showSpinner &&
                 <LocationsList data={this.props.apiData}/>

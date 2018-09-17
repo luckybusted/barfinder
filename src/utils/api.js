@@ -56,6 +56,33 @@ let api = {
                 console.log('axios error: ', error);
             })
 
+    },
+
+    detailCall(id) {
+        let url = 'https://api.yelp.com/v3/businesses/' + id,
+            key = 'Bearer ' + apiKey,
+            urlProxy = 'https://cors-anywhere.herokuapp.com/' + url;
+
+        const config = {
+            url: urlProxy,
+            method: 'GET',
+            json: true,
+            headers: {
+                'Authorization': key,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        };
+
+        return axios(config)
+            .then((response) => {
+                console.log('RESPONSE DETAIL', response.data);
+                return response.data;
+            })
+            .catch(function (error) {
+                console.log('axios error: ', error);
+            })
+
     }
 };
 

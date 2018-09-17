@@ -2,7 +2,9 @@ import {
     SET_LOCATION,
     REQUEST_APIDATA,
     RECEIVED_APIDATA,
-    DATA_ERROR
+    DATA_ERROR,
+    REQUEST_DETAILDATA,
+    RECEIVED_DETAILDATA
 } from './action-types';
 
 import api from '../utils/api';
@@ -22,6 +24,19 @@ export function testCall(params){
         api.basicCall(params)
             .then(
                 (data) => dispatch({type: RECEIVED_APIDATA, value: data})
+            )
+            .catch(err => {
+                dispatch({type: DATA_ERROR, errors: err});
+            });
+    }
+}
+
+export function detailCall(id){
+    return (dispatch) => {
+        dispatch({type: REQUEST_DETAILDATA});
+        api.detailCall(id)
+            .then(
+                (data) => dispatch({type: RECEIVED_DETAILDATA, value: data})
             )
             .catch(err => {
                 dispatch({type: DATA_ERROR, errors: err});
