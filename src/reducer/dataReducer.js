@@ -5,13 +5,18 @@ import React from 'react';
 import {
     SET_LOCATION,
     REQUEST_APIDATA,
-    RECEIVE_APIDATA,
+    RECEIVED_APIDATA,
+    GET_LOCATION,
+    DATA_ERROR
 } from '../actions/action-types';
 
 
 const initialState = {
+    errors: '',
     location: '',
-    showDataLoader: false
+    showDataLoader: true,
+    showLocationLoader: true,
+    apiData: {}
 };
 
 function locationCleaner(location){
@@ -27,10 +32,30 @@ const dataReducer = (state = initialState, action) => {
                 showDataLoader: true
             };
 
+        case RECEIVED_APIDATA:
+            return {
+                ...state,
+                apiData: action.value,
+                showDataLoader: false
+            };
+
+        case GET_LOCATION:
+            return {
+                ...state,
+                showLocationLoader: true
+            };
+
         case SET_LOCATION:
             return {
                 ...state,
-                location: action.value
+                location: action.value,
+                showLocationLoader: false
+            };
+
+        case DATA_ERROR:
+            return {
+                ...state,
+                errors: action.errors
             };
 
         default:

@@ -11,24 +11,46 @@ ES6Promise.polyfill();
 
 let api = {
 
-    basicCall(){
-
-        let url = 'https://api.yelp.com/v3/businesses/search',
-            key = 'Bearer ' + apiKey;
-
-        console.log('API KEY', key);
-
+    getLocation(){
         const config = {
-            headers: {'Authorization': key},
-            params: {
-                term: 'tacos',
-                location: 'main 123st'
-            }
+            url: 'https://ipinfo.io/geo',
+            method: 'GET',
+            json: true
         };
 
-        return axios.get(url, config)
+        return axios(config)
             .then((response) => {
-                console.log('RESPONSE', response);
+                console.log('API RESPONSE', response);
+                return response.data;
+            })
+            .catch(function (error) {
+                console.log('axios error: ', error);
+            });
+
+    },
+
+    basicCall(params) {
+
+        let url = 'https://api.yelp.com/v3/businesses/search',
+            key = 'Bearer ' + apiKey,
+            urlProxy = 'https://cors-anywhere.herokuapp.com/' + url;
+
+        const config = {
+            url: urlProxy,
+            method: 'GET',
+            json: true,
+            headers: {
+                'Authorization': key,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            params: params
+        };
+
+        return axios(config)
+            .then((response) => {
+                console.log('RESPONSE', response.data);
+                return response.data;
             })
             .catch(function (error) {
                 console.log('axios error: ', error);

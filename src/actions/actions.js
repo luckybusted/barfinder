@@ -1,6 +1,8 @@
 import {
     SET_LOCATION,
-    REQUEST_APIDATA
+    REQUEST_APIDATA,
+    RECEIVED_APIDATA,
+    DATA_ERROR
 } from './action-types';
 
 import api from '../utils/api';
@@ -14,9 +16,15 @@ export function setLocation(location){
     }
 }
 
-export function testCall(){
+export function testCall(params){
     return (dispatch) => {
         dispatch({type: REQUEST_APIDATA});
-        api.basicCall();
+        api.basicCall(params)
+            .then(
+                (data) => dispatch({type: RECEIVED_APIDATA, value: data})
+            )
+            .catch(err => {
+                dispatch({type: DATA_ERROR, errors: err});
+            });
     }
 }

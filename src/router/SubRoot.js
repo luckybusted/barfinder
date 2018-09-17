@@ -8,11 +8,11 @@ import Error from '../containers/Error';
 
 import MainLayout from './MainLayout.js';
 import history from '../utils/history';
+import api from '../utils/api';
 
 let ReactRedux = require('react-redux');
 let locale = require('browser-locale');
 let actions = require('../actions/actions');
-
 
 class SubRoot extends Component {
     constructor(props) {
@@ -22,45 +22,66 @@ class SubRoot extends Component {
             params: props.match
         };
         this.success = this.success.bind(this);
+        this.getPosition = this.getPosition.bind(this);
     }
 
     success(pos) {
-        let crd = pos.coords,
-            latlng = crd.latitude + ',' + crd.longitude;
+        let location = {
+            longitude: pos.longitude,
+            latitude: pos.latitude,
+        },
+        params = {
+            longitude: pos.longitude,
+            latitude: pos.latitude,
+            categories: 'bars'
+        };
 
-        console.log('Your current position is:');
-        console.log(`Latitude : ${crd.latitude}`);
-        console.log(`Longitude: ${crd.longitude}`);
-        console.log(`More or less ${crd.accuracy} meters.`);
-
-        this.props.setLocation(latlng);
+        this.props.setLocation(location);
+        this.props.testCall(params);
 
     }
 
-    error(err) {
-        console.warn(`ERROR(${err.code}): ${err.message}`);
+    getPosition(posOptions) {
+        return new Promise(function (resolve, reject) {
+            navigator.geolocation.getCurrentPosition(resolve, reject, posOptions);
+        });
     }
 
     componentWillMount() {
-        let options = {
+
+        let posOptions = {
             enableHighAccuracy: false,
             timeout: 5000,
             maximumAge: 0
         };
 
-        navigator.geolocation.getCurrentPosition(this.success, this.error, options);
+        this.getPosition(posOptions)
+            .then((position) => {
+                console.log(position);
+                this.success(position.coords);
+            })
+            .catch((err) => {
+                console.warn(`ERROR(${err.code}): ${err.message}`);
 
-        this.props.testCall();
+                //fallback get location
+                api.getLocation()
+                    .then((response) => {
+                        console.log('GETLOCATION RESPONSE', response);
+                        let loc = response.loc.split(','),
+                            coords = {
+                                latitude: loc[0],
+                                longitude: loc[1]
+                            };
+                        this.success(coords);
+                    });
+
+            });
 
     }
 
     componentDidMount() {
 
-        //this.props.setLocation(history.location);
 
-        /*history.listen(location => {
-            this.props.setLocation(location);
-        });*/
     }
 
     render() {
@@ -88,11 +109,9 @@ class SubRoot extends Component {
 }
 
 export default ReactRedux.connect(
-    (state) => ({
-
-    }),
+    (state) => ({}),
     (dispatch) => ({
         setLocation: (location) => dispatch(actions.setLocation(location)),
-        testCall : () => dispatch(actions.testCall())
+        testCall: (params) => dispatch(actions.testCall(params))
     })
 )(SubRoot);
