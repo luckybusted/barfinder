@@ -17,9 +17,8 @@ class MainNavigation extends Component {
             <div className="mainNaviContainer" id="mainNaviContainer">
                 <div className="mainNavi" id="mainNavi">
                     <ul className="leftnav-top-level">
-                        <li><NavLink exact={true} activeClassName='active' to='/Verkauf'>Verkauf</NavLink></li>
+                        <li><NavLink exact={true} activeClassName='active' to='/'>HOME</NavLink></li>
                         <li><NavLink activeClassName='active' to='/Informationen'>Informationen</NavLink></li>
-                        <li><NavLink activeClassName='active' to='/Kontakt'>Kontakt</NavLink></li>
                     </ul>
                 </div>
             </div>
