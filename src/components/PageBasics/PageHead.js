@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {NavLink, Link, withRouter} from 'react-router-dom';
 
 class PageHead extends Component {
 
@@ -12,7 +13,7 @@ class PageHead extends Component {
 
         return (
             <div className="header" id="header">
-                PAGE HEAD
+                <Link to="/" className="logo">BAR FINDER</Link>
             </div>
         );
     }
