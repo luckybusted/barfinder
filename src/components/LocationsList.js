@@ -28,7 +28,13 @@ class LocationsList extends Component {
                             {item.location.address1}<br/>
                             {item.location.zip_code} {item.location.city}
                         </p>
-                        <Link to={'/LocationDetail?id=' + item.id} className="btn btn-primary">Let's go</Link>
+                        <Link to={{
+                            pathname: '/LocationDetail',
+                            search: '?id=' + item.id,
+                            state: {
+                                feelingLucky: false
+                            }
+                        }} className="btn btn-primary">Let's go</Link>
                     </div>
 
                 </div>

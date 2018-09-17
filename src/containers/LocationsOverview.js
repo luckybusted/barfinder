@@ -16,28 +16,27 @@ class LocationsOverview extends Component {
 
     componentWillMount() {
         let params = {
-            longitude: this.props.location.longitude,
-            latitude: this.props.location.latitude,
+            longitude: this.props.userLocation.longitude,
+            latitude: this.props.userLocation.latitude,
             categories: 'bars'
         };
 
-        {this.props.location.longitude &&
+        {this.props.userLocation.longitude &&
             this.props.testCall(params);
         }
 
     }
 
     componentWillReceiveProps(nextProps){
-        if (this.props.location !== nextProps.location) {
+        if (this.props.userLocation !== nextProps.userLocation) {
 
             let params = {
-                longitude: nextProps.location.longitude,
-                latitude: nextProps.location.latitude,
+                longitude: nextProps.userLocation.longitude,
+                latitude: nextProps.userLocation.latitude,
                 categories: 'bars'
             };
 
             this.props.testCall(params);
-
         }
     }
 
@@ -59,7 +58,7 @@ class LocationsOverview extends Component {
 
 export default ReactRedux.connect(
     (state) => ({
-        location: state.dataReducer.location,
+        userLocation: state.dataReducer.userLocation,
         showDataLoader: state.dataReducer.showDataLoader,
         apiData: state.dataReducer.apiData
     }),

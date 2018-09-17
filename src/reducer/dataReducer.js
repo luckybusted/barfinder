@@ -15,7 +15,7 @@ import {
 
 const initialState = {
     errors: '',
-    location: '',
+    userLocation: '',
     showDataLoader: true,
     showDetailLoader: true,
     showLocationLoader: true,
@@ -52,7 +52,7 @@ const dataReducer = (state = initialState, action) => {
         case SET_LOCATION:
             return {
                 ...state,
-                location: action.value,
+                userLocation: action.value,
                 showLocationLoader: false
             };
 

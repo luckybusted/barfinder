@@ -31,7 +31,7 @@ export function testCall(params){
     }
 }
 
-export function detailCall(id){
+export function detailCallAction(id){
     return (dispatch) => {
         dispatch({type: REQUEST_DETAILDATA});
         api.detailCall(id)

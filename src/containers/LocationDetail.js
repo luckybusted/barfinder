@@ -9,79 +9,77 @@ class LocationDetail extends Component {
         super(props);
         this.state = {
             props: props,
-            params: props.match,
-            detailID: {}
+            params: props.match
         };
         this.renderDetails = this.renderDetails.bind(this);
+        this.setDetailId = this.setDetailId.bind(this);
+        this.gamble = this.gamble.bind(this);
     }
 
-    componentWillMount() {
+    setDetailId() {
         let search = window.location.search,
             sliced = search.slice(1),
             splitted = sliced.split('&'),
             obj = {};
 
-        if (search === '') {
-            return obj
-        } else {
+        splitted.map((query) => {
+                let key,
+                    value;
 
-            splitted.map((query) => {
-                    let key,
-                        value;
+                query = query.split('=');
+                key = query[0];
+                value = query[1];
 
-                    query = query.split('=');
-                    key = query[0];
-                    value = query[1];
+                obj[key] = value;
 
-                    if (!obj[key]) {
-                        obj[key] = value;
-                    } else {
-                        // Key already exists!
-                    }
+            }
+        );
 
-                }
-            );
+        this.props.detailCallAction(obj.id);
+    }
+
+    gamble(nextProps) {
+        let apiData = nextProps ? nextProps.apiData.businesses : this.props.apiData.businesses;
+
+        if (apiData) {
+            let dataLength = apiData.length,
+                numX = Math.floor((Math.random() * dataLength)),
+                detailId = apiData[numX].id;
+
+            //todo: push id to the URL bar '?id=' + detailId
+
+            this.props.detailCallAction(detailId);
         }
-        console.log('SEARCH PARAMS', splitted);
-        console.log('OBJ', obj);
+    }
 
-        this.setState({
-            detailID: obj
-        });
+    componentWillReceiveProps(nextProps) {
+        if (this.props.apiData !== nextProps.apiData) {
+            this.gamble(nextProps);
+        }
+    }
 
+    componentDidMount() {
+        const {feelingLucky} = this.props.location.state;
+        !feelingLucky ? this.setDetailId() : this.gamble();
     }
 
     renderDetails() {
-        if (this.state.detailID.id) {
+        if (this.props.detailData) {
 
-            console.log('THIS STATE GOT ID');
-            this.props.detailCall(this.state.detailID.id);
+            let detailData = this.props.detailData;
 
-        } else { // coming from the get-lucky link
-            if (this.props.apiData.businesses) {
-                let apiData = this.props.apiData.businesses,
-                    dataLength = apiData.length,
-                    numX = Math.floor((Math.random() * dataLength)),
-                    detail = apiData[numX];
+            return <div>
+                <h2>{detailData.name}</h2>
 
-                console.log('APIDATA', apiData);
-                console.log('NUM X', numX);
-                console.log('DETAIL', detail);
+            </div>
 
-                return <div>
-                    <h2>{detail.name}</h2>
-                    <img src={detail.image_url} alt=""/>
-                </div>
 
-            } else {
-                <Loader/>
-            }
         }
     }
 
     render() {
         return (
-            <div>LOCATION DETAIL
+            <div className="container">
                 {this.renderDetails()}
             </div>
 
@@ -91,13 +89,15 @@ class LocationDetail extends Component {
 
 export default ReactRedux.connect(
     (state) => ({
-        location: state.dataReducer.location,
+        userLocation: state.dataReducer.userLocation,
         showDataLoader: state.dataReducer.showDataLoader,
-        apiData: state.dataReducer.apiData
+        showDetailLoader: state.dataReducer.showDetailLoader,
+        apiData: state.dataReducer.apiData,
+        detailData: state.dataReducer.detailData
     }),
     (dispatch) => ({
         testCall: (params) => dispatch(actions.testCall(params)),
-        detailCall: (id) => dispatch(actions.detailCall(id))
+        detailCallAction: (id) => dispatch(actions.detailCallAction(id))
     })
 )(LocationDetail);
 

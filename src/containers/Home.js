@@ -16,14 +16,21 @@ class Home extends Component {
             <div className="container">
                 HOMEPAGE
                 <div className="row">
-                    <div className="col-6"><Link to="/LocationDetail" className="btn btn-primary btn-lg">Auf gut Glück</Link></div>
-                    <div className="col-6"><Link to="/LocationsOverview" className="btn btn-primary btn-lg">Bars Suchen</Link></div>
+                    <div className="col-6">
+                        <Link to={{
+                            pathname: '/LocationDetail',
+                            state: {
+                                feelingLucky: true
+                            }
+                        }} className="btn btn-primary btn-lg">Auf gut Glück</Link></div>
+                    <div className="col-6"><Link to="/LocationsOverview" className="btn btn-primary btn-lg">Bars
+                        Suchen</Link></div>
                 </div>
                 {showSpinner &&
                 <Loader/>
                 }
                 {!showSpinner &&
-                <div>You are here: {this.props.location.latitude + ', ' + this.props.location.longitude}</div>
+                <div>You are here: {this.props.userLocation.latitude + ', ' + this.props.userLocation.longitude}</div>
                 }
 
             </div>
@@ -33,7 +40,7 @@ class Home extends Component {
 
 export default ReactRedux.connect(
     (state) => ({
-        location: state.dataReducer.location,
+        userLocation: state.dataReducer.userLocation,
         showLocationLoader: state.dataReducer.showLocationLoader
     }),
     (dispatch) => ({
