@@ -1,3 +1,9 @@
+.home-header {
+  background: red; }
+
+.header {
+  background: green; }
+
 body {
   margin: 0;
   padding: 0;
