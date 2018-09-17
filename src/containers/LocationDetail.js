@@ -68,7 +68,10 @@ class LocationDetail extends Component {
                 console.log('NUM X', numX);
                 console.log('DETAIL', detail);
 
-                return <div>{detail.name}</div>
+                return <div>
+                    <h2>{detail.name}</h2>
+                    <img src={detail.image_url} alt=""/>
+                </div>
 
             } else {
                 <Loader/>
