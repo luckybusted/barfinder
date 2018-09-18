@@ -6,15 +6,12 @@ let ReactRedux = require('react-redux');
 
 class Home extends Component {
 
-    // how to make a call: https://medium.com/@sparkyevangelista/http-request-to-yelps-api-using-react-native-c567137f534f
-
     render() {
 
         let showSpinner = this.props.showLocationLoader;
 
         return (
             <div className="container">
-                HOMEPAGE
                 <div className="row">
                     <div className="col-6">
                         <Link to={{
