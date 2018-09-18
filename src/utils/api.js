@@ -36,7 +36,8 @@ let api = {
             urlProxy = 'https://cors-anywhere.herokuapp.com/' + url;
 
         const config = {
-            url: urlProxy,
+            // url: urlProxy,
+            url: url,
             method: 'GET',
             json: true,
             headers: {
@@ -64,7 +65,8 @@ let api = {
             urlProxy = 'https://cors-anywhere.herokuapp.com/' + url;
 
         const config = {
-            url: urlProxy,
+            //url: urlProxy,
+            url: url,
             method: 'GET',
             json: true,
             headers: {
