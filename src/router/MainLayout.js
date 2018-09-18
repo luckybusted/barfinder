@@ -17,7 +17,8 @@ class MainLayout extends Component {
         return (
             <div className="portalMainContent external" id="main">
                 <PageHead/>
-                <div className="standardContainer" style={{overflow: 'auto', marginTop: 20, position: 'relative'}}>
+                <div className="standardContainer"
+                     style={{overflow: 'auto', marginTop: 20, position: 'relative'}}>
                     {/*<MainNavigation/>*/}
                     {this.props.children}
                 </div>

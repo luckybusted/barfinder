@@ -23,8 +23,10 @@ class Home extends Component {
                                 feelingLucky: true
                             }
                         }} className="btn btn-primary btn-lg">Auf gut Glück</Link></div>
-                    <div className="col-6"><Link to="/LocationsOverview" className="btn btn-primary btn-lg">Bars
-                        Suchen</Link></div>
+                    <div className="col-6">
+                        <Link to="/LocationsOverview"
+                              className="btn btn-primary btn-lg">Bars Suchen</Link>
+                    </div>
                 </div>
                 {showSpinner &&
                 <Loader/>

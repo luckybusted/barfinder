@@ -21,7 +21,9 @@ class LocationsList extends Component {
 
         let locations = this.props.data.businesses.map((item, i) => {
                 return <div key={'item' + i} className="locationsListItem card col-sm-4">
-                    <img className="card-img-top" src={item.image_url} alt={item.name}/>
+                    <img className="card-img-top"
+                         src={item.image_url}
+                         alt={item.name}/>
                     <div className="card-body">
                         <h5><Link to={'/LocationDetail?id=' + item.id}>{item.name}</Link></h5>
                         <p className="card-text">

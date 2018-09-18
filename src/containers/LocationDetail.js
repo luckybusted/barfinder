@@ -70,9 +70,19 @@ class LocationDetail extends Component {
 
             return <div>
                 <h2>{detailData.name}</h2>
-
+                <div className="row">
+                    <div className="col-3">{detailData.price}</div>
+                    <div className="col-3">{detailData.rating}</div>
+                    <div className={`col-3 ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
+                        {detailData.hours ? (detailData.hours[0].is_open_now ? 'Geöffnet' : 'Geschlossen') : ''}
+                    </div>
+                </div>
+                <p>
+                    {detailData.location ? detailData.location.address1 : ''}<br/>
+                    {detailData.location ? detailData.location.zip_code : ''} {detailData.location ? detailData.location.city : ''}<br/>
+                    {detailData.display_phone}
+                </p>
             </div>
-
 
         }
     }

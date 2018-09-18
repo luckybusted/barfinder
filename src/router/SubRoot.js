@@ -33,7 +33,8 @@ class SubRoot extends Component {
         params = {
             longitude: pos.longitude,
             latitude: pos.latitude,
-            categories: 'bars'
+            categories: 'bars',
+            //attributes: Alcohol.full_bar
         };
 
         this.props.setLocation(location);
@@ -66,7 +67,6 @@ class SubRoot extends Component {
                 //fallback get location
                 api.getLocation()
                     .then((response) => {
-                        console.log('GETLOCATION RESPONSE', response);
                         let loc = response.loc.split(','),
                             coords = {
                                 latitude: loc[0],
