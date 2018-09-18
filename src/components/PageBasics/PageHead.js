@@ -12,9 +12,9 @@ class PageHead extends Component {
         return (
             <div className={home ? 'home-header container' : 'header container'} id="header">
                 <Link to="/" className="logo">
-                    <div class="sign">
-                        <div class="neon-blue" id="title">B<span id="fade">ar</span> </div>
-                        <div class="neon-blue"> <span class="neon-purple" id="trav">Finder</span></div>
+                    <div className="sign">
+                        <div className="neon-blue" id="title">B<span id="fade">ar</span> </div>
+                        <div className="neon-blue"> <span className="neon-purple" id="trav">Finder</span></div>
                     </div>
                 </Link>
             </div>
