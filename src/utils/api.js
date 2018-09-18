@@ -36,8 +36,7 @@ let api = {
             urlProxy = 'https://cors-anywhere.herokuapp.com/' + url;
 
         const config = {
-            // url: urlProxy,
-            url: url,
+            url: urlProxy,
             method: 'GET',
             json: true,
             headers: {
@@ -50,7 +49,6 @@ let api = {
 
         return axios(config)
             .then((response) => {
-                console.log('RESPONSE', response.data);
                 return response.data;
             })
             .catch(function (error) {
@@ -65,8 +63,7 @@ let api = {
             urlProxy = 'https://cors-anywhere.herokuapp.com/' + url;
 
         const config = {
-            //url: urlProxy,
-            url: url,
+            url: urlProxy,
             method: 'GET',
             json: true,
             headers: {
@@ -78,7 +75,6 @@ let api = {
 
         return axios(config)
             .then((response) => {
-                console.log('RESPONSE DETAIL', response.data);
                 return response.data;
             })
             .catch(function (error) {
