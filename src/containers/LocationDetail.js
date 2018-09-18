@@ -68,28 +68,34 @@ class LocationDetail extends Component {
 
             let detailData = this.props.detailData;
 
-            return <div>
-                <h2>{detailData.name}</h2>
-                <div className="row">
-                    <div className="col-3">{detailData.price}</div>
-                    <div className="col-3">{detailData.rating}</div>
-                    <div className={`col-3 ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
-                        {detailData.hours ? (detailData.hours[0].is_open_now ? 'Geöffnet' : 'Geschlossen') : ''}
+            return [
+                <div key={'main-image-container'} className="main-image-container">
+                    <img src={detailData.image_url} alt=""/>
+                </div>,
+                <div key={'container'} className="container">
+                    <h2>{detailData.name}</h2>
+                    <div className="row">
+                        <div className="col-3">{detailData.price}</div>
+                        <div className="col-3">{detailData.rating}</div>
+                        <div
+                            className={`col-3 ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
+                            {detailData.hours ? (detailData.hours[0].is_open_now ? 'Geöffnet' : 'Geschlossen') : ''}
+                        </div>
                     </div>
+                    <p>
+                        {detailData.location ? detailData.location.address1 : ''}<br/>
+                        {detailData.location ? detailData.location.zip_code : ''} {detailData.location ? detailData.location.city : ''}<br/>
+                        {detailData.display_phone}
+                    </p>
                 </div>
-                <p>
-                    {detailData.location ? detailData.location.address1 : ''}<br/>
-                    {detailData.location ? detailData.location.zip_code : ''} {detailData.location ? detailData.location.city : ''}<br/>
-                    {detailData.display_phone}
-                </p>
-            </div>
+            ]
 
         }
     }
 
     render() {
         return (
-            <div className="container">
+            <div>
                 {this.renderDetails()}
             </div>
 
