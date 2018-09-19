@@ -6,3 +6,4 @@ export const DATA_ERROR = 'DATA_ERROR';
 export const GET_LOCATION = 'GET_LOCATION';
 export const REQUEST_DETAILDATA = 'REQUEST_DETAILDATA';
 export const RECEIVED_DETAILDATA = 'RECEIVED_DETAILDATA';
+export const SET_ENV = 'SET_ENV';

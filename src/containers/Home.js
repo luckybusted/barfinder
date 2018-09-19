@@ -3,8 +3,17 @@ import {NavLink, Link, withRouter} from 'react-router-dom';
 import Loader from "../modules/Loader";
 
 let ReactRedux = require('react-redux');
+let actions = require('../actions/actions');
 
 class Home extends Component {
+
+    componentWillMount(){
+        this.props.setEnv('Home');
+    }
+
+    componentWillUnmount(){
+        this.props.setEnv('');
+    }
 
     render() {
 
@@ -43,7 +52,6 @@ export default ReactRedux.connect(
         showLocationLoader: state.dataReducer.showLocationLoader
     }),
     (dispatch) => ({
-        //setLocation: (location) => dispatch(actions.setLocation(location)),
-        //testCall : (params) => dispatch(actions.testCall(params))
+        setEnv : (env) => dispatch(actions.setEnv(env))
     })
 )(Home);

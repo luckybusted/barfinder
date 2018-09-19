@@ -7859,6 +7859,12 @@ body {
   background: #000;
   color: #f8f9fa; }
 
+.footer {
+  background: #343a40;
+  font-size: 0.875rem;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
 .main-image-container {
   overflow: hidden;
   max-height: 30vh; }

@@ -78,11 +78,6 @@ class SubRoot extends Component {
 
     }
 
-    componentDidMount() {
-
-
-    }
-
     render() {
 
         return (

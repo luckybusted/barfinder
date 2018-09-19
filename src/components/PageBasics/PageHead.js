@@ -2,12 +2,14 @@ import React, {Component} from 'react';
 import history from '../../utils/history';
 import {NavLink, Link, withRouter} from 'react-router-dom';
 
+let ReactRedux = require('react-redux');
+
 class PageHead extends Component {
 
 
     render() {
 
-        let home = history.location.pathname === '/';
+        let home = this.props.env === 'Home';
 
         return (
             <div className={home ? 'home-header container' : 'header container'} id="header">
@@ -23,5 +25,9 @@ class PageHead extends Component {
     }
 }
 
+export default ReactRedux.connect(
+    (state) => ({
+        env: state.dataReducer.env
+    })
+)(PageHead);
 
-export default PageHead;

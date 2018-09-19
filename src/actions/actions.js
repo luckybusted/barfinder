@@ -4,7 +4,8 @@ import {
     RECEIVED_APIDATA,
     DATA_ERROR,
     REQUEST_DETAILDATA,
-    RECEIVED_DETAILDATA
+    RECEIVED_DETAILDATA,
+    SET_ENV
 } from './action-types';
 
 import api from '../utils/api';
@@ -41,5 +42,12 @@ export function detailCallAction(id){
             .catch(err => {
                 dispatch({type: DATA_ERROR, errors: err});
             });
+    }
+}
+
+export function setEnv(env){
+    return {
+        type: SET_ENV,
+        value: env
     }
 }

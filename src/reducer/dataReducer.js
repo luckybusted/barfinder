@@ -9,7 +9,8 @@ import {
     GET_LOCATION,
     DATA_ERROR,
     REQUEST_DETAILDATA,
-    RECEIVED_DETAILDATA
+    RECEIVED_DETAILDATA,
+    SET_ENV
 } from '../actions/action-types';
 
 
@@ -19,6 +20,7 @@ const initialState = {
     showDataLoader: true,
     showDetailLoader: true,
     showLocationLoader: true,
+    env: '',
     apiData: {},
     detailData: {}
 };
@@ -41,6 +43,12 @@ const dataReducer = (state = initialState, action) => {
                 ...state,
                 apiData: action.value,
                 showDataLoader: false
+            };
+
+        case SET_ENV:
+            return {
+                ...state,
+                env: action.value
             };
 
         case GET_LOCATION:
