@@ -35,6 +35,8 @@ class LocationsOverview extends Component {
                 longitude: nextProps.userLocation.longitude,
                 latitude: nextProps.userLocation.latitude,
                 categories: 'bars'
+                // open_now: true,
+                // radius: 2000,
             };
 
             this.props.testCall(params);
