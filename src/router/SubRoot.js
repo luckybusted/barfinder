@@ -103,8 +103,8 @@ class SubRoot extends Component {
                     <Route path={'/Imprint'}
                            component={Imprint}
                            key='Imprint'/>,
-                    <Route component={Error}
-                           key='Error'/>
+                    <Route component={Home}
+                           key='NotFound'/>
                 </Switch>
 
             </MainLayout>
