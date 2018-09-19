@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
-import {Router, Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 import Home from '../containers/Home';
 import LocationDetail from '../containers/LocationDetail';
 import LocationsOverview from '../containers/LocationsOverview';
-import Error from '../containers/Error';
 import Imprint from '../containers/Imprint';
 
 import MainLayout from './MainLayout.js';
-import history from '../utils/history';
 import api from '../utils/api';
 
 let ReactRedux = require('react-redux');

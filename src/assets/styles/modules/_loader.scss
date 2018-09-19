@@ -1,0 +1,49 @@
+.loader {
+  height: 80vh;
+  font-size: 60px;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 20px #fff, 0 0 10px #7d26cd, 0 0 50px #7d26cd;
+  &:before {
+    font-family: "bar-finder";
+    line-height: 80vh;
+    display: block;
+    content: '\e800';
+    animation: loader 2s infinite normal;
+  }
+  /*&:after {
+    display: block;
+    content: '.';
+    animation: loader-dots 2s infinite normal;
+  }*/
+}
+
+@keyframes loader {
+  33% {
+    content: '\e800';
+  }
+  66% {
+    content: '\e801';
+  }
+  100% {
+    content: '\e802';
+  }
+}
+
+@keyframes loader-dots {
+  20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60% {
+    content: '...';
+  }
+  80% {
+    content: '....';
+  }
+  100% {
+    content: '.....';
+  }
+}

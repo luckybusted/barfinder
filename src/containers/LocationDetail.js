@@ -103,7 +103,9 @@ class LocationDetail extends Component {
                 <Loader/>
                 }
 
-                {this.renderDetails()}
+                {!detailLoader &&
+                this.renderDetails()
+                }
             </div>
 
         );

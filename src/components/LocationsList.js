@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import LocationsListItem from "../modules/LocationsListItem";
-import {NavLink, Link, withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 let ReactRedux = require('react-redux');
 
