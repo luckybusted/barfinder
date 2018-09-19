@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import LocationsListItem from "../modules/LocationsListItem";
 import {NavLink, Link, withRouter} from 'react-router-dom';
-import Loader from "../modules/Loader";
 
 let ReactRedux = require('react-redux');
 
@@ -20,7 +19,7 @@ class LocationsList extends Component {
         console.log('THIS PROPS DATA', this.props.data);
 
         let locations = this.props.data.businesses.map((item, i) => {
-                return <div key={'item' + i} className="locationsListItem card col-sm-4">
+                return [<div key={'item' + i} className="locationsListItem card col-sm-4">
                     <img className="card-img-top"
                          src={item.image_url}
                          alt={item.name}/>
@@ -39,7 +38,8 @@ class LocationsList extends Component {
                         }} className="btn btn-primary">Let's go</Link>
                     </div>
 
-                </div>
+                </div>,
+                    <hr key={'divider' + i} className="card-divider"/>]
             }
         );
 
@@ -49,17 +49,11 @@ class LocationsList extends Component {
 
     render() {
 
-        let showSpinner = this.props.showDataLoader;
-
         return (
-            <div className="row">
-                {showSpinner &&
-                <Loader/>
-                }
+            <div className="locations-list row">
 
-                {!showSpinner &&
-                this.renderLocations()
-                }
+                {this.renderLocations()}
+
             </div>
         );
     }

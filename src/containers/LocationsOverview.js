@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import LocationsList from "../components/LocationsList";
+import Loader from "../modules/Loader";
 
 let ReactRedux = require('react-redux');
 let actions = require('../actions/actions');
@@ -47,6 +48,10 @@ class LocationsOverview extends Component {
         return (
             <div className="container">
                 <h3>Bars in deiner Nähe:</h3>
+
+                {showSpinner &&
+                    <Loader/>
+                }
 
                 {this.props.apiData && !showSpinner &&
                 <LocationsList data={this.props.apiData}/>

@@ -94,8 +94,15 @@ class LocationDetail extends Component {
     }
 
     render() {
+
+        let detailLoader = this.props.showDetailLoader;
+
         return (
             <div>
+                {detailLoader &&
+                <Loader/>
+                }
+
                 {this.renderDetails()}
             </div>
 
