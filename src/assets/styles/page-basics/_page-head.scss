@@ -39,6 +39,7 @@
     -webkit-transform: rotate(-3deg);
     transform: rotate(-3deg);
     font-size: 50px;
+    padding: 40px 0;
 
     #title {
       font-size: 110px;
@@ -49,6 +50,7 @@
     }
     .neon-blue {
       margin: 0 auto;
+      line-height: 1em;
       text-align: center;
       text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff;
     }
