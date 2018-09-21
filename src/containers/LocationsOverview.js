@@ -49,7 +49,6 @@ class LocationsOverview extends Component {
 
         return (
             <div className="container">
-                <h3>Bars in deiner Nähe:</h3>
 
                 {showSpinner &&
                     <Loader/>

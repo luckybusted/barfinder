@@ -30,18 +30,28 @@ class LocationsList extends Component {
                              alt={item.name}/>
                     </Link>
                     <div className="card-body">
-                        <h5><Link to={'/LocationDetail?id=' + item.id}>{item.name}</Link></h5>
-                        <p className="card-text">
-                            {item.location.address1}<br/>
-                            {item.location.zip_code} {item.location.city}
-                        </p>
-                        <Link to={{
-                            pathname: '/LocationDetail',
-                            search: '?id=' + item.id,
-                            state: {
-                                feelingLucky: false
-                            }
-                        }} className="btn btn-primary">Let's go</Link>
+                        <div className="row">
+                            <div className="col-9">
+                                <p className="address">{item.location.address1}</p>
+                                <Link className="name" to={{
+                                    pathname: '/LocationDetail',
+                                    search: '?id=' + item.id,
+                                    state: {
+                                        feelingLucky: false
+                                    }
+                                }}><h3>{item.name}</h3></Link>
+                                <p className="rating">
+                                    <span className="ratingStars" style={{width: 18*item.rating}}/>({item.review_count})</p>
+                            </div>
+                            <div className="col-3">
+                                <p className="distance">{Math.floor(item.distance)} m</p>
+                                <p className="price">{item.price}</p>
+                            </div>
+
+                        </div>
+                        {/*<p className="card-text">
+
+                        </p>*/}
                     </div>
 
                 </div>,

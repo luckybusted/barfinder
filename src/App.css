@@ -7733,6 +7733,11 @@ template {
   content: '\e804'; }
 
 /* '' */
+.btn-primary {
+  background: #000;
+  border: #ebffff;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff; }
+
 .home-header .logo,
 .header .logo {
   text-decoration: none; }
@@ -7897,10 +7902,33 @@ body {
     .sub-images li img {
       max-width: 100%; }
 
+.rating .ratingStars {
+  position: relative;
+  overflow: hidden;
+  height: 20px;
+  display: inline-block;
+  margin-right: 10px; }
+  .rating .ratingStars:before {
+    position: absolute;
+    font-family: 'bar-finder';
+    display: block;
+    content: '\e803 \e803 \e803 \e803 \e803';
+    width: 150px; }
+
 .locations-list .card {
   background: transparent;
   border-width: 0;
   border-radius: 0; }
+  .locations-list .card .card-body {
+    padding: 1.25rem 0; }
+    .locations-list .card .card-body .name {
+      color: #fff; }
+      .locations-list .card .card-body .name h3 {
+        font-size: 1.65rem;
+        font-weight: 600; }
+    .locations-list .card .card-body .address,
+    .locations-list .card .card-body .distance {
+      margin-bottom: 5px; }
 
 .locations-list .card-divider {
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff;

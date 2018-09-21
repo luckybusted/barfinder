@@ -53,7 +53,7 @@ class LocationDetail extends Component {
         }
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.setState({image: ''})
     }
 
@@ -69,8 +69,8 @@ class LocationDetail extends Component {
         const {feelingLucky} = this.props.location.state;
         !feelingLucky ? this.setDetailId() : this.gamble();
 
-        if(detailData.photos){
-           this.setState({image: detailData.photos[0]});
+        if (detailData.photos) {
+            this.setState({image: detailData.photos[0]});
         }
     }
 
@@ -95,10 +95,13 @@ class LocationDetail extends Component {
                 <div key={'container'} className="container">
                     <h2>{detailData.name}</h2>
                     <div className="row">
-                        <div className="col-3">{detailData.price}</div>
-                        <div className="col-3">{detailData.rating}</div>
+                        <div className="col-6">
+                            <p className="price">{detailData.price}</p>
+                            <p className="rating">
+                                <span className="ratingStars" style={{width: 18*detailData.rating}}/>{detailData.rating}</p>
+                        </div>
                         <div
-                            className={`col-3 ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
+                            className={`col-6 ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
                             {detailData.hours ? (detailData.hours[0].is_open_now ? 'Geöffnet' : 'Geschlossen') : ''}
                         </div>
                     </div>

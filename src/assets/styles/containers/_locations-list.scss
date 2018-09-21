@@ -4,6 +4,21 @@
     border-width: 0;
     border-radius: 0;
 
+    .card-body {
+      padding: 1.25rem 0;
+      .name {
+        color: $white;
+        h3 {
+          font-size: 1.65rem;
+          font-weight: 600;
+        }
+      }
+      .address,
+      .distance {
+        margin-bottom: 5px;
+      }
+    }
+
   }
   .card-divider {
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff;

@@ -19,3 +19,19 @@
     }
   }
 }
+.rating {
+  .ratingStars {
+    position: relative;
+    overflow: hidden;
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    &:before {
+      position: absolute;
+      font-family: 'bar-finder';
+      display: block;
+      content: '\e803 \e803 \e803 \e803 \e803';
+      width: 150px;
+    }
+  }
+}
