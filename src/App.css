@@ -7761,32 +7761,40 @@ template {
       font-family: 'League Script', Helvetica, Arial, sans-serif;
       color: #ccf; }
 
-.home-header .sign {
-  -ms-transform: rotate(-3deg);
-  -webkit-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-  font-size: 50px;
-  padding: 40px 0; }
-  .home-header .sign #title {
-    font-size: 110px; }
-  .home-header .sign #fade {
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff; }
-  .home-header .sign .neon-blue {
-    margin: 0 auto;
-    line-height: 1em;
-    text-align: center;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff; }
-  .home-header .sign .neon-purple {
-    font-size: 100px;
-    margin: 0 auto;
-    text-align: center;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 20px #fff, 0 0 10px #7d26cd, 0 0 50px #7d26cd; }
+.home-header {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .home-header .sign {
+    -ms-transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    font-size: 50px;
+    padding: 40px 0; }
+    .home-header .sign #title {
+      font-size: 110px; }
+    .home-header .sign #fade {
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff; }
+    .home-header .sign .neon-blue {
+      margin: 0 auto;
+      line-height: 1em;
+      text-align: center;
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff; }
+    .home-header .sign .neon-purple {
+      font-size: 100px;
+      margin: 0 auto;
+      text-align: center;
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 20px #fff, 0 0 10px #7d26cd, 0 0 50px #7d26cd; }
 
-.header .sign {
-  overflow: hidden;
-  font-size: 1.25rem; }
-  .header .sign .neon-blue {
-    float: left; }
+.header {
+  background: #343a40;
+  height: 50px; }
+  .header .sign {
+    overflow: hidden;
+    font-size: 1.25rem; }
+    .header .sign .neon-blue {
+      float: left; }
 
 @-moz-keyframes blink {
   70% {
@@ -7859,6 +7867,12 @@ body {
   background: #000;
   color: #f8f9fa; }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh; }
+
 .footer {
   background: #343a40;
   font-size: 0.875rem;
@@ -7869,6 +7883,13 @@ body {
   overflow: hidden;
   max-height: 30vh; }
   .main-image-container img {
+    max-width: 100%; }
+
+.sub-images {
+  display: flex;
+  list-style: none;
+  padding: 0; }
+  .sub-images li img {
     max-width: 100%; }
 
 .locations-list .card {
@@ -7884,19 +7905,19 @@ body {
   background: #edffff; }
 
 .loader {
-  height: 80vh;
-  font-size: 60px;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  z-index: 9999;
+  height: 100vh;
+  font-size: 70px;
   margin: 0 auto;
   text-align: center;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 20px #fff, 0 0 10px #7d26cd, 0 0 50px #7d26cd;
-  /*&:after {
-    display: block;
-    content: '.';
-    animation: loader-dots 2s infinite normal;
-  }*/ }
+  width: 100%;
+  top: 0; }
   .loader:before {
     font-family: "bar-finder";
-    line-height: 80vh;
+    line-height: 100vh;
     display: block;
     content: '\e800';
     animation: loader 2s infinite normal; }

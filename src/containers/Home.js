@@ -28,18 +28,18 @@ class Home extends Component {
                             state: {
                                 feelingLucky: true
                             }
-                        }} className="btn btn-primary btn-lg">Auf gut Glück</Link></div>
+                        }} className="btn btn-block btn-primary btn-lg">Auf gut Glück</Link></div>
                     <div className="col-6">
                         <Link to="/LocationsOverview"
-                              className="btn btn-primary btn-lg">Bars Suchen</Link>
+                              className="btn btn-block btn-primary btn-lg">Bars Suchen</Link>
                     </div>
                 </div>
                 {showSpinner &&
                 <Loader/>
                 }
-                {!showSpinner &&
+                {/*
                 <div>You are here: {this.props.userLocation.latitude + ', ' + this.props.userLocation.longitude}</div>
-                }
+                */}
 
             </div>
         );

@@ -34,6 +34,11 @@
 }
 
 .home-header {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .sign {
     -ms-transform: rotate(-3deg);
     -webkit-transform: rotate(-3deg);
@@ -64,6 +69,8 @@
 }
 
 .header {
+  background: $gray-800;
+  height: 50px;
   .sign {
     overflow: hidden;
     font-size: $font-size-lg;

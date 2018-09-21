@@ -5,3 +5,10 @@ body {
   background: #000;
   color: $light;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}

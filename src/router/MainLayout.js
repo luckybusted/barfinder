@@ -14,17 +14,15 @@ class MainLayout extends Component {
 
     render() {
 
-        return (
-            <div className="portalMainContent external" id="main">
-                <PageHead/>
-                <div className="standardContainer"
-                     style={{overflow: 'auto', marginTop: 20, position: 'relative'}}>
-                    {/*<MainNavigation/>*/}
-                    {this.props.children}
-                </div>
-                <PageFoot/>
-            </div>
-        );
+        return [
+            <PageHead key="pageHead"/>,
+            <div className="mainContent"
+                 key="mainContent">
+                {/*<MainNavigation/>*/}
+                {this.props.children}
+            </div>,
+            <PageFoot key="pageFoot"/>
+        ];
     }
 }
 

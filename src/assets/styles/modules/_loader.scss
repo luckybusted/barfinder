@@ -1,21 +1,21 @@
 .loader {
-  height: 80vh;
-  font-size: 60px;
+  background: rgba(0,0,0,.7);
+  position: absolute;
+  z-index: 9999;
+  height: 100vh;
+  font-size: 70px;
   margin: 0 auto;
   text-align: center;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 20px #fff, 0 0 10px #7d26cd, 0 0 50px #7d26cd;
+  width: 100%;
+  top: 0;
   &:before {
     font-family: "bar-finder";
-    line-height: 80vh;
+    line-height: 100vh;
     display: block;
     content: '\e800';
     animation: loader 2s infinite normal;
   }
-  /*&:after {
-    display: block;
-    content: '.';
-    animation: loader-dots 2s infinite normal;
-  }*/
 }
 
 @keyframes loader {
