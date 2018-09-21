@@ -15,13 +15,20 @@ class LocationsList extends Component {
     }
 
     renderLocations() {
-        console.log('THIS PROPS DATA', this.props.data);
 
         let locations = this.props.data.businesses.map((item, i) => {
                 return [<div key={'item' + i} className="locationsListItem card col-sm-4">
-                    <img className="card-img-top"
-                         src={item.image_url}
-                         alt={item.name}/>
+                    <Link to={{
+                        pathname: '/LocationDetail',
+                        search: '?id=' + item.id,
+                        state: {
+                            feelingLucky: false
+                        }
+                    }}>
+                        <img className="card-img-top"
+                             src={item.image_url}
+                             alt={item.name}/>
+                    </Link>
                     <div className="card-body">
                         <h5><Link to={'/LocationDetail?id=' + item.id}>{item.name}</Link></h5>
                         <p className="card-text">
