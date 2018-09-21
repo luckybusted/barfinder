@@ -9,7 +9,8 @@ class LocationDetail extends Component {
         super(props);
         this.state = {
             props: props,
-            params: props.match
+            params: props.match,
+            image: ''
         };
         this.renderDetails = this.renderDetails.bind(this);
         this.setDetailId = this.setDetailId.bind(this);
@@ -52,6 +53,10 @@ class LocationDetail extends Component {
         }
     }
 
+    componentWillMount(){
+        this.setState({image: ''})
+    }
+
     componentWillReceiveProps(nextProps) {
         if (this.props.apiData !== nextProps.apiData) {
             this.gamble(nextProps);
@@ -59,8 +64,14 @@ class LocationDetail extends Component {
     }
 
     componentDidMount() {
+        let detailData = this.props.detailData;
+
         const {feelingLucky} = this.props.location.state;
         !feelingLucky ? this.setDetailId() : this.gamble();
+
+        if(detailData.photos){
+           this.setState({image: detailData.photos[0]});
+        }
     }
 
     renderDetails() {
@@ -68,15 +79,15 @@ class LocationDetail extends Component {
 
             let detailData = this.props.detailData;
             let images = detailData.photos.map((img, i) => {
-                return <li key='subImage'>
-                    <img src={img} alt=""/>
+                return <li key={'subImage' + i}>
+                    <img onClick={() => this.setState({image: img})} src={img} alt=""/>
                 </li>
             });
 
 
             return [
                 <div key={'main-image-container'} className="main-image-container">
-                    <img src={detailData.image_url} alt=""/>
+                    <img src={this.state.image ? this.state.image : detailData.image_url} alt=""/>
                 </div>,
                 <ul className="sub-images" key='sub-images'>
                     {images}

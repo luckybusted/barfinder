@@ -7881,16 +7881,21 @@ body {
 
 .main-image-container {
   overflow: hidden;
-  max-height: 30vh; }
+  height: 40vh;
+  position: relative; }
   .main-image-container img {
-    max-width: 100%; }
+    max-width: 100%;
+    position: absolute;
+    transform: translateY(-25%); }
 
 .sub-images {
   display: flex;
   list-style: none;
   padding: 0; }
-  .sub-images li img {
-    max-width: 100%; }
+  .sub-images li {
+    width: 33.33%; }
+    .sub-images li img {
+      max-width: 100%; }
 
 .locations-list .card {
   background: transparent;

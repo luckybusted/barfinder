@@ -1,8 +1,11 @@
 .main-image-container {
   overflow: hidden;
-  max-height: 30vh;
+  height: 40vh;
+  position: relative;
   img {
     max-width: 100%;
+    position: absolute;
+    transform: translateY(-25%);
   }
 }
 .sub-images {
@@ -10,6 +13,7 @@
   list-style: none;
   padding: 0;
   li {
+    width: 33.33%;
     img {
       max-width: 100%;
     }
