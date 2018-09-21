@@ -5,3 +5,13 @@
     max-width: 100%;
   }
 }
+.sub-images {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  li {
+    img {
+      max-width: 100%;
+    }
+  }
+}

@@ -67,11 +67,20 @@ class LocationDetail extends Component {
         if (this.props.detailData) {
 
             let detailData = this.props.detailData;
+            let images = detailData.photos.map((img, i) => {
+                return <li key='subImage'>
+                    <img src={img} alt=""/>
+                </li>
+            });
+
 
             return [
                 <div key={'main-image-container'} className="main-image-container">
                     <img src={detailData.image_url} alt=""/>
                 </div>,
+                <ul className="sub-images" key='sub-images'>
+                    {images}
+                </ul>,
                 <div key={'container'} className="container">
                     <h2>{detailData.name}</h2>
                     <div className="row">
