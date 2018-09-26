@@ -33,7 +33,7 @@ let api = {
 
         let url = 'https://api.yelp.com/v3/businesses/search',
             key = 'Bearer ' + apiKey,
-            urlProxy = 'https://cors-anywhere.herokuapp.com/' + url;
+            urlProxy = 'https://finder-cors.herokuapp.com/' + url;
 
         const config = {
             url: urlProxy,
@@ -60,7 +60,7 @@ let api = {
     detailCall(id) {
         let url = 'https://api.yelp.com/v3/businesses/' + id,
             key = 'Bearer ' + apiKey,
-            urlProxy = 'https://cors-anywhere.herokuapp.com/' + url;
+            urlProxy = 'https://finder-cors.herokuapp.com/' + url;
 
         const config = {
             url: urlProxy,
