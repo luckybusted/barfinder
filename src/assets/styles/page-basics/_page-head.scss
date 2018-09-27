@@ -71,6 +71,9 @@
 .header {
   background: $gray-800;
   height: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
   .sign {
     overflow: hidden;
     font-size: $font-size-lg;

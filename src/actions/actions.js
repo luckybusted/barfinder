@@ -5,7 +5,9 @@ import {
     DATA_ERROR,
     REQUEST_DETAILDATA,
     RECEIVED_DETAILDATA,
-    SET_ENV
+    SET_ENV,
+    FILTER_TOGGLE,
+    CHANGE_OPEN
 } from './action-types';
 
 import api from '../utils/api';
@@ -49,5 +51,18 @@ export function setEnv(env){
     return {
         type: SET_ENV,
         value: env
+    }
+}
+
+export function filterToggleAction() {
+    return {
+        type: FILTER_TOGGLE
+    }
+}
+
+export function changeOpen(){
+
+    return {
+        type: CHANGE_OPEN
     }
 }

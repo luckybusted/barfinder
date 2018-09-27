@@ -3,6 +3,7 @@ import {combineReducers} from 'redux';
 
 
 import dataReducer from './dataReducer';
+import uiReducer from './uiReducer';
 
 // Things you should never do inside a reducer:
 
@@ -13,6 +14,7 @@ import dataReducer from './dataReducer';
 
 const reducer = combineReducers({
     dataReducer: dataReducer,
+    uiReducer: uiReducer
 });
 
 export default reducer;

@@ -16,11 +16,7 @@ class LocationsOverview extends Component {
 
 
     componentWillMount() {
-        let params = {
-            longitude: this.props.userLocation.longitude,
-            latitude: this.props.userLocation.latitude,
-            categories: 'bars'
-        };
+        let params = this.props.searchParams;
 
         {this.props.userLocation.longitude &&
             this.props.testCall(params);
@@ -30,15 +26,7 @@ class LocationsOverview extends Component {
 
     componentWillReceiveProps(nextProps){
         if (this.props.userLocation !== nextProps.userLocation) {
-
-            let params = {
-                longitude: nextProps.userLocation.longitude,
-                latitude: nextProps.userLocation.latitude,
-                categories: 'bars'
-                // open_now: true,
-                // radius: 2000,
-            };
-
+            let params = nextProps.searchParams;
             this.props.testCall(params);
         }
     }
@@ -66,7 +54,8 @@ export default ReactRedux.connect(
     (state) => ({
         userLocation: state.dataReducer.userLocation,
         showDataLoader: state.dataReducer.showDataLoader,
-        apiData: state.dataReducer.apiData
+        apiData: state.dataReducer.apiData,
+        searchParams: state.dataReducer.searchParams
     }),
     (dispatch) => ({
         testCall: (params) => dispatch(actions.testCall(params))

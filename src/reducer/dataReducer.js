@@ -10,7 +10,8 @@ import {
     DATA_ERROR,
     REQUEST_DETAILDATA,
     RECEIVED_DETAILDATA,
-    SET_ENV
+    SET_ENV,
+    CHANGE_OPEN
 } from '../actions/action-types';
 
 
@@ -22,7 +23,14 @@ const initialState = {
     showLocationLoader: true,
     env: '',
     apiData: {},
-    detailData: {}
+    detailData: {},
+    searchParams: {
+        longitude: '',
+        latitude: '',
+        categories: 'bars',
+        open_now: false,
+        radius: 2000
+    }
 };
 
 function locationCleaner(location){
@@ -61,6 +69,11 @@ const dataReducer = (state = initialState, action) => {
             return {
                 ...state,
                 userLocation: action.value,
+                searchParams: {
+                    ...state.searchParams,
+                    longitude: action.value.longitude,
+                    latitude: action.value.latitude
+                },
                 showLocationLoader: false
             };
 
@@ -81,6 +94,15 @@ const dataReducer = (state = initialState, action) => {
             return {
                 ...state,
                 errors: action.errors
+            };
+
+        case CHANGE_OPEN:
+            return {
+                ...state,
+                searchParams: {
+                    ...state.searchParams,
+                    open_now: !state.searchParams.open_now
+                }
             };
 
         default:

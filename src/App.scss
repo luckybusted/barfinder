@@ -1,11 +1,13 @@
-// BOOTSTRAP
+// ==================== BOOTSTRAP ==================== //
 
 @import 'assets/styles/vendor/bootstrap/bootstrap.scss';
 @import 'assets/styles/vendor/bootstrap/bootstrap-grid.scss';
 @import 'assets/styles/vendor/bootstrap/bootstrap-reboot.scss';
 
-//===========================================================//
+// ==================== VENDORS ====================== //
 
+
+// ==================== CORE ====================== //
 @import 'assets/styles/fonts/bar-finder';
 @import 'assets/styles/page-basics/all';
 @import 'assets/styles/containers/all';

@@ -1,11 +1,24 @@
 import React, {Component} from 'react';
-import history from '../../utils/history';
 import {NavLink, Link, withRouter} from 'react-router-dom';
 
 let ReactRedux = require('react-redux');
+let actions = require('../../actions/actions');
 
 class PageHead extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            props: props,
+            params: props.match
+        };
+        this.filterToggle = this.filterToggle.bind(this);
+    }
+
+    filterToggle(){
+        console.log('FILTER TOGGLE');
+        this.props.filterToggleAction();
+    }
 
     render() {
 
@@ -19,6 +32,9 @@ class PageHead extends Component {
                         <div className="neon-blue"> <span className="neon-purple" id="trav">Finder</span></div>
                     </div>
                 </Link>
+                {home ? '' :
+                <a className="filter-toggle" onClick={this.filterToggle}>FILTER</a>
+                }
             </div>
         );
 
@@ -28,6 +44,9 @@ class PageHead extends Component {
 export default ReactRedux.connect(
     (state) => ({
         env: state.dataReducer.env
+    }),
+    (dispatch) => ({
+        filterToggleAction : () => dispatch(actions.filterToggleAction())
     })
 )(PageHead);
 
