@@ -26,6 +26,9 @@ class LocationsOverview extends Component {
 
     componentWillReceiveProps(nextProps){
         if (this.props.userLocation !== nextProps.userLocation) {
+
+            console.log('RECEIVED PROPS LOCATION OVERVIEW');
+
             let params = nextProps.searchParams;
             this.props.apiCall(params);
         }

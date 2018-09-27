@@ -7,7 +7,8 @@ import {
     RECEIVED_DETAILDATA,
     SET_ENV,
     FILTER_TOGGLE,
-    CHANGE_OPEN
+    CHANGE_OPEN,
+    CHANGE_RADIUS
 } from './action-types';
 
 import api from '../utils/api';
@@ -61,8 +62,14 @@ export function filterToggleAction() {
 }
 
 export function changeOpen(){
-
     return {
         type: CHANGE_OPEN
+    }
+}
+
+export function changeRadius(radius) {
+    return {
+        type: CHANGE_RADIUS,
+        value: radius
     }
 }

@@ -72,8 +72,11 @@
   background: $gray-800;
   height: 50px;
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
   .sign {
     overflow: hidden;
     font-size: $font-size-lg;

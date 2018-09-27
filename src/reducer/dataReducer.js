@@ -11,7 +11,8 @@ import {
     REQUEST_DETAILDATA,
     RECEIVED_DETAILDATA,
     SET_ENV,
-    CHANGE_OPEN
+    CHANGE_OPEN,
+    CHANGE_RADIUS
 } from '../actions/action-types';
 
 
@@ -90,12 +91,6 @@ const dataReducer = (state = initialState, action) => {
                 showDetailLoader: false
             };
 
-        case DATA_ERROR:
-            return {
-                ...state,
-                errors: action.errors
-            };
-
         case CHANGE_OPEN:
             return {
                 ...state,
@@ -103,6 +98,21 @@ const dataReducer = (state = initialState, action) => {
                     ...state.searchParams,
                     open_now: !state.searchParams.open_now
                 }
+            };
+
+        case CHANGE_RADIUS:
+            return {
+                ...state,
+                searchParams: {
+                    ...state.searchParams,
+                    radius: action.value
+                }
+            };
+
+        case DATA_ERROR:
+            return {
+                ...state,
+                errors: action.errors
             };
 
         default:
