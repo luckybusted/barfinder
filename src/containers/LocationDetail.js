@@ -144,7 +144,7 @@ export default ReactRedux.connect(
         detailData: state.dataReducer.detailData
     }),
     (dispatch) => ({
-        testCall: (params) => dispatch(actions.testCall(params)),
+        apiCall: (params) => dispatch(actions.apiCall(params)),
         detailCallAction: (id) => dispatch(actions.detailCallAction(id))
     })
 )(LocationDetail);

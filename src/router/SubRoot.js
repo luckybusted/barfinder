@@ -37,7 +37,7 @@ class SubRoot extends Component {
         };
 
         this.props.setLocation(location);
-        this.props.testCall(params);
+        this.props.apiCall(params);
 
     }
 
@@ -109,6 +109,6 @@ export default ReactRedux.connect(
     (state) => ({}),
     (dispatch) => ({
         setLocation: (location) => dispatch(actions.setLocation(location)),
-        testCall: (params) => dispatch(actions.testCall(params))
+        apiCall: (params) => dispatch(actions.apiCall(params))
     })
 )(SubRoot);

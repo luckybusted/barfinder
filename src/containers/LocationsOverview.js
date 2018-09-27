@@ -19,7 +19,7 @@ class LocationsOverview extends Component {
         let params = this.props.searchParams;
 
         {this.props.userLocation.longitude &&
-            this.props.testCall(params);
+            this.props.apiCall(params);
         }
 
     }
@@ -27,7 +27,7 @@ class LocationsOverview extends Component {
     componentWillReceiveProps(nextProps){
         if (this.props.userLocation !== nextProps.userLocation) {
             let params = nextProps.searchParams;
-            this.props.testCall(params);
+            this.props.apiCall(params);
         }
     }
 
@@ -58,6 +58,6 @@ export default ReactRedux.connect(
         searchParams: state.dataReducer.searchParams
     }),
     (dispatch) => ({
-        testCall: (params) => dispatch(actions.testCall(params))
+        apiCall: (params) => dispatch(actions.apiCall(params))
     })
 )(LocationsOverview);

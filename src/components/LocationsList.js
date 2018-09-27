@@ -81,6 +81,6 @@ export default ReactRedux.connect(
     }),
     (dispatch) => ({
         //setLocation: (location) => dispatch(actions.setLocation(location)),
-        //testCall : (params) => dispatch(actions.testCall(params))
+        //apiCall : (params) => dispatch(actions.apiCall(params))
     })
 )(LocationsList);

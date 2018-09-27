@@ -21,7 +21,7 @@ export function setLocation(location){
     }
 }
 
-export function testCall(params){
+export function apiCall(params){
     return (dispatch) => {
         dispatch({type: REQUEST_APIDATA});
         api.basicCall(params)
