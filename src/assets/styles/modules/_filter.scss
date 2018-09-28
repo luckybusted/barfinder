@@ -75,10 +75,18 @@
     background: $black;
     border: #ebffff;
     color: #ebffff;
+    opacity: .6;
+    margin-bottom: 15px;
     &.active {
       background: #ebffff;
       color: $black;
+      opacity: 1;
     }
+  }
+
+  .label {
+    font-size: $font-size-sm;
+    margin-bottom: 0;
   }
 
   .btn {

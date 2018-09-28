@@ -48,13 +48,14 @@ class Filter extends Component {
                     </div>*/}
 
                     <button type="button"
-                            className={`btn btn-chbx btn-sm ${searchParams.open_now ? 'active' : ''}`}
+                            className={`btn btn-chbx btn-sm ${searchParams.open_now ? 'active bf-ok' : 'bf-cancel'}`}
                             data-toggle="button"
                             aria-pressed={searchParams.open_now}
                             onClick={this.props.changeOpen}>jetzt Geöffnet</button>
 
-                    <p>Radius</p>
+                    <p className="label">Radius</p>
                     <Slider min={0} max={5000} defaultValue={2000} onAfterChange={this.changeRadius}/>
+                    <span>{this.props.searchParams.radius}m</span>
 
                     <button className="btn submit btn-primary btn-block"
                             onClick={this.filterUpdate}>Suchen</button>

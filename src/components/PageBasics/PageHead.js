@@ -25,7 +25,7 @@ class PageHead extends Component {
         let home = this.props.env === 'Home';
 
         return (
-            <div className={home ? 'home-header container' : 'header container'} id="header">
+            <div className={home ? 'home-header' : 'header'} id="header">
                 <Link to="/" className="logo">
                     <div className="sign">
                         <div className="neon-blue" id="title">B<span id="fade">ar</span> </div>
@@ -33,7 +33,7 @@ class PageHead extends Component {
                     </div>
                 </Link>
                 {home ? '' :
-                <a className="filter-toggle" onClick={this.filterToggle}>FILTER</a>
+                <a className="filter-toggle bf-filter" onClick={this.filterToggle}/>
                 }
             </div>
         );

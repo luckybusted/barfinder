@@ -80,8 +80,19 @@
   .sign {
     overflow: hidden;
     font-size: $font-size-lg;
+    line-height: 50px;
+    margin-left: 20px;
     .neon-blue {
       float: left;
+    }
+  }
+  .filter-toggle {
+    width: 50px;
+    text-align: center;
+    &:before {
+      font-size: 1.65em;
+      height: 50px;
+      line-height: 50px;
     }
   }
 }
