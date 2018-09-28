@@ -30,7 +30,8 @@ const initialState = {
         latitude: '',
         categories: 'bars',
         open_now: false,
-        radius: 2000
+        radius: 2000,
+        price: ''
     }
 };
 

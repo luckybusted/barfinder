@@ -16,13 +16,13 @@ class PageHead extends Component {
     }
 
     filterToggle(){
-        console.log('FILTER TOGGLE');
         this.props.filterToggleAction();
     }
 
     render() {
 
-        let home = this.props.env === 'Home';
+        let home = this.props.env === 'Home',
+            filterShown = this.props.filterShown;
 
         return (
             <div className={home ? 'home-header' : 'header'} id="header">
@@ -33,7 +33,7 @@ class PageHead extends Component {
                     </div>
                 </Link>
                 {home ? '' :
-                <a className="filter-toggle bf-filter" onClick={this.filterToggle}/>
+                <a className={`filter-toggle ${!filterShown ? 'bf-filter' : 'bf-cancel'}`} onClick={this.filterToggle}/>
                 }
             </div>
         );
@@ -43,7 +43,8 @@ class PageHead extends Component {
 
 export default ReactRedux.connect(
     (state) => ({
-        env: state.dataReducer.env
+        env: state.dataReducer.env,
+        filterShown: state.uiReducer.filterShown
     }),
     (dispatch) => ({
         filterToggleAction : () => dispatch(actions.filterToggleAction())
