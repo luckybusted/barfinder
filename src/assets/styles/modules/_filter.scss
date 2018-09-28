@@ -83,10 +83,12 @@
       opacity: 1;
     }
   }
-
-  .label {
-    font-size: $font-size-sm;
-    margin-bottom: 0;
+  .slider-wrapper {
+    margin-bottom: 15px;
+    .label {
+      font-size: $font-size-sm;
+      margin-bottom: 0;
+    }
   }
 
   .btn {
