@@ -84,7 +84,6 @@ class LocationDetail extends Component {
                 </li>
             });
 
-
             return [
                 <div key={'main-image-container'} className="main-image-container">
                     <img src={this.state.image ? this.state.image : detailData.image_url} alt=""/>
@@ -98,7 +97,8 @@ class LocationDetail extends Component {
                         <div className="col-6">
                             <p className="price">{detailData.price}</p>
                             <p className="rating">
-                                <span className="ratingStars" style={{width: 18*detailData.rating}}/>{detailData.rating}</p>
+                                <span className="ratingStars"
+                                      style={{width: 18 * detailData.rating}}/>{detailData.rating}</p>
                         </div>
                         <div
                             className={`col-6 ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
@@ -110,6 +110,9 @@ class LocationDetail extends Component {
                         {detailData.location ? detailData.location.zip_code : ''} {detailData.location ? detailData.location.city : ''}<br/>
                         {detailData.display_phone}
                     </p>
+
+                    <a href={`http://maps.google.de/maps?q=${detailData.coordinates.latitude},${detailData.coordinates.longitude}&z=19`} className="btn btn-block btn-primary">Route anzeigen</a>
+
                 </div>
             ]
 
