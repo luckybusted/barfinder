@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Slider, { Range } from 'rc-slider';
+import Slider, {Range} from 'rc-slider';
+import {NavLink, Link} from "react-router-dom/";
 
 let ReactRedux = require('react-redux');
 let actions = require('../actions/actions');
@@ -51,15 +52,30 @@ class Filter extends Component {
                             className={`btn btn-chbx btn-sm ${searchParams.open_now ? 'active bf-ok' : 'bf-cancel'}`}
                             data-toggle="button"
                             aria-pressed={searchParams.open_now}
-                            onClick={this.props.changeOpen}>jetzt Geöffnet</button>
+                            onClick={this.props.changeOpen}>jetzt Geöffnet
+                    </button>
 
-                    <p className="label">Radius</p>
-                    <Slider min={0} max={5000} defaultValue={2000} onAfterChange={this.changeRadius}/>
-                    <span>{this.props.searchParams.radius}m</span>
+                    <div className="slider-wrapper">
+                        <p className="label">Radius</p>
+                        <Slider min={0} max={5000} defaultValue={2000} onAfterChange={this.changeRadius}/>
+                        <span className="label">{this.props.searchParams.radius}m</span>
+                    </div>
 
                     <button className="btn submit btn-primary btn-block"
-                            onClick={this.filterUpdate}>Suchen</button>
+                            onClick={this.filterUpdate}>Suchen
+                    </button>
                 </div>
+
+                <nav className="filterNavigation">
+                    <ul>
+                        <li>
+                            <Link to="/About">Über Bar-Finder</Link>
+                        </li>
+                        <li>
+                            <Link to="/Imprint">Impressum</Link>
+                        </li>
+                    </ul>
+                </nav>
 
             </div>
         );
@@ -75,6 +91,6 @@ export default ReactRedux.connect(
         changeOpen: () => dispatch(actions.changeOpen()),
         changeRadius: (radius) => dispatch(actions.changeRadius(radius)),
         apiCall: (params) => dispatch(actions.apiCall(params)),
-        filterToggleAction : () => dispatch(actions.filterToggleAction())
+        filterToggleAction: () => dispatch(actions.filterToggleAction())
     })
 )(Filter);
