@@ -5,6 +5,7 @@ import Home from '../containers/Home';
 import LocationDetail from '../containers/LocationDetail';
 import LocationsOverview from '../containers/LocationsOverview';
 import Imprint from '../containers/Imprint';
+import About from '../containers/About';
 
 import MainLayout from './MainLayout.js';
 import api from '../utils/api';
@@ -96,6 +97,9 @@ class SubRoot extends Component {
                     <Route path={'/Imprint'}
                            component={Imprint}
                            key='Imprint'/>,
+                    <Route path={'/About'}
+                           component={About}
+                           key='About'/>,
                     <Route component={Home}
                            key='NotFound'/>
                 </Switch>
