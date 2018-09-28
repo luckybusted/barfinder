@@ -66,7 +66,7 @@ class Filter extends Component {
                     </button>
                 </div>
 
-                <nav className="filterNavigation">
+                <nav className="filter-navigation">
                     <ul>
                         <li>
                             <Link to="/About">Über Bar-Finder</Link>

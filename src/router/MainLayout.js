@@ -17,20 +17,24 @@ class MainLayout extends Component {
         this.filterToggle = this.filterToggle.bind(this);
     }
 
-    filterToggle(){
-        this.props.filterToggleAction();
+    filterToggle() {
+        let filterShown = this.props.filterShown;
+
+        if (filterShown) {
+            this.props.filterToggleAction();
+        }
     }
 
     render() {
 
-        let filterShown = this.props.filterShown;
+        let home = this.props.env === 'Home';
 
         return [
             <PageHead key="pageHead"/>,
             <Filter key="filterNavigation"/>,
-            <div className="mainContent"
+            <div className={`mainContent ${home ? '' : 'content'}`}
                  key="mainContent"
-                    onClick={filterShown ? this.filterToggle : ''}>
+                 onClick={this.filterToggle}>
                 {/*<MainNavigation/>*/}
                 {this.props.children}
             </div>,
@@ -41,9 +45,10 @@ class MainLayout extends Component {
 
 export default ReactRedux.connect(
     (state) => ({
+        env: state.dataReducer.env,
         filterShown: state.uiReducer.filterShown
     }),
     (dispatch) => ({
-        filterToggleAction : () => dispatch(actions.filterToggleAction())
+        filterToggleAction: () => dispatch(actions.filterToggleAction())
     })
 )(MainLayout);

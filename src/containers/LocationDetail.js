@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Loader from "../modules/Loader";
+import Carousel from 'nuka-carousel';
+
 
 let ReactRedux = require('react-redux');
 let actions = require('../actions/actions');
@@ -79,18 +81,13 @@ class LocationDetail extends Component {
 
             let detailData = this.props.detailData;
             let images = detailData.photos.map((img, i) => {
-                return <li key={'subImage' + i}>
-                    <img onClick={() => this.setState({image: img})} src={img} alt=""/>
-                </li>
+                return <img src={img} alt=""/>
             });
 
             return [
-                <div key={'main-image-container'} className="main-image-container">
-                    <img src={this.state.image ? this.state.image : detailData.image_url} alt=""/>
-                </div>,
-                <ul className="sub-images" key='sub-images'>
+                <Carousel key={'main-image-container'}>
                     {images}
-                </ul>,
+                </Carousel>,
                 <div key={'container'} className="container">
                     <h2>{detailData.name}</h2>
                     <div className="row">
@@ -111,7 +108,8 @@ class LocationDetail extends Component {
                         {detailData.display_phone}
                     </p>
 
-                    <a href={`http://maps.google.de/maps?q=${detailData.coordinates.latitude},${detailData.coordinates.longitude}&z=19`} className="btn btn-block btn-primary">Route anzeigen</a>
+                    <a href={`http://maps.google.de/maps?q=${detailData.coordinates.latitude},${detailData.coordinates.longitude}&z=19`}
+                       className="btn btn-block btn-primary">Route anzeigen</a>
 
                 </div>
             ]

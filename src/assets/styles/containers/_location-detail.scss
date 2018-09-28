@@ -8,6 +8,36 @@
     transform: translateY(-25%);
   }
 }
+.slider {
+  padding-bottom: 50px;
+  .slider-control-centerleft,
+  .slider-control-centerright {
+    display: none;
+  }
+  .slider-frame {
+    .slider-list {
+      height: 50vh !important;
+      background: #343a40;
+      .slider-slide {
+        height: 50vh !important;
+        img {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+  .slider-control-bottomcenter {
+    bottom: -5px !important;
+    li {
+      button {
+        color: white !important;
+      }
+    }
+  }
+}
+
 .sub-images {
   display: flex;
   list-style: none;

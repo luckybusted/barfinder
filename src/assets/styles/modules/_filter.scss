@@ -97,6 +97,25 @@
     }
   }
 
+  .filter-navigation {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    ul {
+      border-top: 1px solid #fff;
+      list-style: none;
+      padding: 0;
+      a {
+        border-bottom: 1px solid #fff;
+        color: #aaa;
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+      }
+    }
+  }
+
 }
 
 @-webkit-keyframes bounceInLeft {
