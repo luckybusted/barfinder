@@ -25,6 +25,7 @@ let api = {
             })
             .catch(function (error) {
                 console.log('axios error: ', error);
+                //return ERROR MESSAGE
             });
 
     },

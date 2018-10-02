@@ -73,6 +73,9 @@ class SubRoot extends Component {
                                 longitude: loc[1]
                             };
                         this.success(coords);
+                    })
+                    .catch((err) => {
+
                     });
 
             });

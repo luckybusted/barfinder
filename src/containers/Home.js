@@ -28,7 +28,8 @@ class Home extends Component {
                             state: {
                                 feelingLucky: true
                             }
-                        }} className="btn btn-block btn-primary btn-lg">Auf gut Glück</Link></div>
+                        }} className="btn btn-block btn-primary btn-lg">Auf gut Glück</Link>
+                    </div>
                     <div className="col-6">
                         <Link to="/LocationsOverview"
                               className="btn btn-block btn-primary btn-lg">Bars Suchen</Link>
