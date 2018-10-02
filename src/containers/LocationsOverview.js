@@ -46,7 +46,7 @@ class LocationsOverview extends Component {
                 }
 
                 {this.props.apiData && !showSpinner &&
-                <LocationsList data={this.props.apiData}/>
+                    <LocationsList data={this.props.apiData}/>
                 }
             </div>
         );

@@ -1,8 +1,26 @@
 .locations-list {
+
+  .error-message {
+    padding-top: 50px;
+    width: 100%;
+    text-align: center;
+  }
+
   .card {
     background: transparent;
     border-width: 0;
     border-radius: 0;
+
+    .image-wrapper {
+      height: 45vh;
+      overflow: hidden;
+      position: relative;
+      img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
 
     .card-body {
       padding: 1.25rem 0;
