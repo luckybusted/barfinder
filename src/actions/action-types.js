@@ -10,3 +10,4 @@ export const SET_ENV = 'SET_ENV';
 export const FILTER_TOGGLE = 'FILTER_TOGGLE';
 export const CHANGE_OPEN = 'CHANGE_OPEN';
 export const CHANGE_RADIUS = 'CHANGE_RADIUS';
+export const CHANGE_PRICE = 'CHANGE_PRICE';

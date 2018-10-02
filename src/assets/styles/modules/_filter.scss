@@ -5,6 +5,7 @@
   left: -80vw;
   width: 80vw;
   background: #222;
+  border-right: 1px solid #000;
   //transition: all .2s ease-in;
 
   z-index: 900;
@@ -83,12 +84,15 @@
       opacity: 1;
     }
   }
-  .slider-wrapper {
+
+  .filter-wrapper {
     margin-bottom: 15px;
+
     .label {
       font-size: $font-size-sm;
       margin-bottom: 0;
     }
+
   }
 
   .btn {

@@ -8033,6 +8033,7 @@ body {
   left: -80vw;
   width: 80vw;
   background: #222;
+  border-right: 1px solid #000;
   z-index: 900; }
   .filter.active {
     left: 0;
@@ -8091,9 +8092,9 @@ body {
       background: #ebffff;
       color: #000;
       opacity: 1; }
-  .filter .slider-wrapper {
+  .filter .filter-wrapper {
     margin-bottom: 15px; }
-    .filter .slider-wrapper .label {
+    .filter .filter-wrapper .label {
       font-size: 0.875rem;
       margin-bottom: 0; }
   .filter .btn.submit {

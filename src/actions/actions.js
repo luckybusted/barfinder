@@ -8,7 +8,8 @@ import {
     SET_ENV,
     FILTER_TOGGLE,
     CHANGE_OPEN,
-    CHANGE_RADIUS
+    CHANGE_RADIUS,
+    CHANGE_PRICE
 } from './action-types';
 
 import api from '../utils/api';
@@ -71,5 +72,12 @@ export function changeRadius(radius) {
     return {
         type: CHANGE_RADIUS,
         value: radius
+    }
+}
+
+export function changePrice(price) {
+    return {
+        type: CHANGE_PRICE,
+        value: price
     }
 }

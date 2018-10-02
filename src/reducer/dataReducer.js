@@ -12,7 +12,7 @@ import {
     RECEIVED_DETAILDATA,
     SET_ENV,
     CHANGE_OPEN,
-    CHANGE_RADIUS
+    CHANGE_RADIUS, CHANGE_PRICE
 } from '../actions/action-types';
 
 
@@ -107,6 +107,15 @@ const dataReducer = (state = initialState, action) => {
                 searchParams: {
                     ...state.searchParams,
                     radius: action.value
+                }
+            };
+
+        case CHANGE_PRICE:
+            return {
+                ...state,
+                searchParams: {
+                    ...state.searchParams,
+                    price: action.value
                 }
             };
 
