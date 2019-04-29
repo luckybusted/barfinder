@@ -7965,40 +7965,40 @@ body {
     content: '\e803 \e803 \e803 \e803 \e803';
     width: 150px; }
 
-.locations-list .error-message {
-  padding-top: 50px;
-  width: 100%;
-  text-align: center; }
-
-.locations-list .card {
-  background: transparent;
-  border-width: 0;
-  border-radius: 0; }
-  .locations-list .card .image-wrapper {
-    height: 45vh;
-    overflow: hidden;
-    position: relative; }
-    .locations-list .card .image-wrapper img {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%); }
-  .locations-list .card .card-body {
-    padding: 1.25rem 0; }
-    .locations-list .card .card-body .name {
-      color: #fff; }
-      .locations-list .card .card-body .name h3 {
-        font-size: 1.65rem;
-        font-weight: 600; }
-    .locations-list .card .card-body .address,
-    .locations-list .card .card-body .distance {
-      margin-bottom: 5px; }
-
-.locations-list .card-divider {
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff;
-  margin-bottom: 40px;
-  height: 1px;
-  width: 100%;
-  background: #edffff; }
+.locations-list {
+  margin-top: 20px; }
+  .locations-list .error-message {
+    padding-top: 50px;
+    width: 100%;
+    text-align: center; }
+  .locations-list .card {
+    background: transparent;
+    border-width: 0;
+    border-radius: 0; }
+    .locations-list .card .image-wrapper {
+      height: 45vh;
+      overflow: hidden;
+      position: relative; }
+      .locations-list .card .image-wrapper img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%); }
+    .locations-list .card .card-body {
+      padding: 1.25rem 0; }
+      .locations-list .card .card-body .name {
+        color: #fff; }
+        .locations-list .card .card-body .name h3 {
+          font-size: 1.65rem;
+          font-weight: 600; }
+      .locations-list .card .card-body .address,
+      .locations-list .card .card-body .distance {
+        margin-bottom: 5px; }
+  .locations-list .card-divider {
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff;
+    margin-bottom: 40px;
+    height: 1px;
+    width: 100%;
+    background: #edffff; }
 
 .loader {
   background: rgba(0, 0, 0, 0.7);

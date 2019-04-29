@@ -11,7 +11,6 @@ import MainLayout from './MainLayout.js';
 import api from '../utils/api';
 
 let ReactRedux = require('react-redux');
-let locale = require('browser-locale');
 let actions = require('../actions/actions');
 
 class SubRoot extends Component {

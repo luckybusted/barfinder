@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PageHead from '../components/PageBasics/PageHead'
-import MainNavigation from '../components/PageBasics/MainNavigation'
 import PageFoot from '../components/PageBasics/PageFoot'
 import Filter from '../components/Filter'
 
