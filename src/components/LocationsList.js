@@ -18,7 +18,7 @@ class LocationsList extends Component {
 
         if(this.props.data.businesses.length > 0){
 
-        let locations = this.props.data.businesses.map((item, i) => {
+            return this.props.data.businesses.map((item, i) => {
                 return [<div key={'item' + i} className="locationsListItem card col-sm-4">
                     <Link className="image-wrapper"
                         to={{
@@ -52,9 +52,7 @@ class LocationsList extends Component {
                             </div>
 
                         </div>
-                        {/*<p className="card-text">
 
-                        </p>*/}
                     </div>
 
                 </div>,
@@ -62,7 +60,6 @@ class LocationsList extends Component {
             }
         );
 
-        return locations
         } else {
             return <div className="error-message"><p><span role="img" aria-label='oh no!!!!'>😱😱😱</span></p><p>Keine Locations in deiner Nähe gefunden. Bitte versuche die Suchkriterien zu erweitern.</p></div>
         }

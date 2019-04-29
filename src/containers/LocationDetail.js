@@ -20,25 +20,11 @@ class LocationDetail extends Component {
     }
 
     setDetailId() {
-        let search = window.location.search,
-            sliced = search.slice(1),
-            splitted = sliced.split('&'),
-            obj = {};
 
-        splitted.map((query) => {
-                let key,
-                    value;
+        let search = window.location.search.substring(1),
+            searchParams = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) });
 
-                query = query.split('=');
-                key = query[0];
-                value = query[1];
-
-                obj[key] = value;
-
-            }
-        );
-
-        this.props.detailCallAction(obj.id);
+        this.props.detailCallAction(searchParams.id);
     }
 
     gamble(nextProps) {
@@ -81,7 +67,7 @@ class LocationDetail extends Component {
 
             let detailData = this.props.detailData;
             let images = detailData.photos.map((img, i) => {
-                return <img src={img} alt=""/>
+                return <img src={img} alt="" key={img}/>
             });
 
             return [

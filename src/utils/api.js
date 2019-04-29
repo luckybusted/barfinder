@@ -13,7 +13,7 @@ let api = {
 
     getLocation(){
         const config = {
-            url: 'https://ipinfo.io/geo',
+            url: 'http://ip-api.com/json/',
             method: 'GET',
             json: true
         };

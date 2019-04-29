@@ -65,10 +65,10 @@ class SubRoot extends Component {
                 //fallback get location
                 api.getLocation()
                     .then((response) => {
-                        let loc = response.loc.split(','),
-                            coords = {
-                                latitude: loc[0],
-                                longitude: loc[1]
+                        //let loc = response.loc.split(','),
+                        let coords = {
+                                latitude: response.lat,
+                                longitude: response.lon
                             };
                         this.success(coords);
                     })
