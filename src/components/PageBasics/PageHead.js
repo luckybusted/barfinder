@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {NavLink, Link, withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 let ReactRedux = require('react-redux');
 let actions = require('../../actions/actions');

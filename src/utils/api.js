@@ -2,8 +2,8 @@ import 'whatwg-fetch';
 import apiKey from './apiKey'
 import axios from 'axios';
 
-let ReactRedux = require('react-redux');
-let actions = require('../actions/actions');
+//let ReactRedux = require('react-redux');
+//let actions = require('../actions/actions');
 
 // ie fix
 let ES6Promise = require("es6-promise");

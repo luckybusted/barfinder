@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {NavLink, Link, withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Loader from "../modules/Loader";
 
 let ReactRedux = require('react-redux');

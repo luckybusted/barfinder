@@ -1,5 +1,3 @@
-import React from 'react';
-
 // const api = require('../utils/api');
 
 import {
@@ -35,9 +33,9 @@ const initialState = {
     }
 };
 
-function locationCleaner(location){
+/*function locationCleaner(location){
     return location.substring(1);
-}
+}*/
 
 const dataReducer = (state = initialState, action) => {
     switch (action.type) {

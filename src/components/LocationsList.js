@@ -64,7 +64,7 @@ class LocationsList extends Component {
 
         return locations
         } else {
-            return <div className="error-message"><p>😱😱😱</p><p>Keine Locations in deiner Nähe gefunden. Bitte versuche die Suchkriterien zu erweitern.</p></div>
+            return <div className="error-message"><p><span role="img" aria-label='oh no!!!!'>😱😱😱</span></p><p>Keine Locations in deiner Nähe gefunden. Bitte versuche die Suchkriterien zu erweitern.</p></div>
         }
 
     }
