@@ -57,7 +57,6 @@ class SubRoot extends Component {
 
         this.getPosition(posOptions)
             .then((position) => {
-                console.log(position);
                 this.success(position.coords);
             })
             .catch((err) => {
@@ -73,10 +72,6 @@ class SubRoot extends Component {
                             };
                         this.success(coords);
                     })
-                    .catch((err) => {
-
-                    });
-
             });
 
     }

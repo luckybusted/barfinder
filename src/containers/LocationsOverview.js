@@ -16,19 +16,18 @@ class LocationsOverview extends Component {
 
 
     componentWillMount() {
-        let params = this.props.searchParams;
+        /*let params = this.props.searchParams;
 
         {this.props.userLocation.longitude &&
-            this.props.apiCall(params);
-        }
+
+        //this.props.apiCall(params);
+        }*/
 
     }
 
     componentWillReceiveProps(nextProps){
         if (this.props.userLocation !== nextProps.userLocation) {
-
-            let params = nextProps.searchParams;
-            this.props.apiCall(params);
+            // empty ....
         }
     }
 
