@@ -21,8 +21,17 @@ class Filter extends Component {
     }
 
     filterUpdate() {
+
+        let newParams = {};
+
+        Object.entries(this.props.searchParams).map(([key, val]) => {
+            if (val) {
+                newParams[key] = val
+            }
+        });
+
         history.push('/LocationsOverview');
-        this.props.apiCall(this.props.searchParams);
+        this.props.apiCall(newParams);
         this.props.filterToggleAction();
     }
 

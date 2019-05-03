@@ -32,6 +32,8 @@ let api = {
 
     basicCall(params) {
 
+        console.log('PARAMS: ', params);
+
         let url = 'https://api.yelp.com/v3/businesses/search',
             key = 'Bearer ' + apiKey,
             urlProxy = 'https://finder-cors.herokuapp.com/' + url;
@@ -45,7 +47,10 @@ let api = {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            params: params
+            params: {
+                ...params,
+                sort_by: 'distance'
+            }
         };
 
         return axios(config)

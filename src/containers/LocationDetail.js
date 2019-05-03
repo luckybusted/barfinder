@@ -97,8 +97,10 @@ class LocationDetail extends Component {
                             </p>
                         </div>
                         <div
-                            className={`col-6 opening ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
+                            className='col-6'>
+                            <div className={`opening ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
                             {detailData.hours ? (detailData.hours[0].is_open_now ? 'Geöffnet' : 'Geschlossen') : ''}
+                            </div>
                         </div>
                     </div>
 
