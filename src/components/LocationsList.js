@@ -19,7 +19,7 @@ class LocationsList extends Component {
         if(this.props.data.businesses.length > 0){
 
             return this.props.data.businesses.map((item, i) => {
-                return [<div key={'item' + i} className="locationsListItem card col-sm-4">
+                return [<div key={'item' + i} className="locationsListItem card col-12">
                     <Link className="image-wrapper"
                         to={{
                         pathname: '/LocationDetail',
