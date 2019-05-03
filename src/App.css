@@ -7911,9 +7911,8 @@ body {
 .footer {
   background: #343a40;
   font-size: 0.875rem;
-  padding-top: 20px;
   margin-top: 20px;
-  padding-bottom: 20px; }
+  padding: 20px; }
 
 .main-image-container {
   overflow: hidden;
@@ -7964,6 +7963,11 @@ body {
     display: block;
     content: '\e803 \e803 \e803 \e803 \e803';
     width: 150px; }
+
+.opening {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .locations-list {
   margin-top: 20px; }
