@@ -13,7 +13,7 @@ let api = {
 
     getLocation(){
         const config = {
-            url: 'http://ip-api.com/json/',
+            url: 'https://api.ipdata.co/?api-key=938afa315fe2c44a3a4567eaa853106f991fe0dd45ce2b2e2923462e',
             method: 'GET',
             json: true
         };

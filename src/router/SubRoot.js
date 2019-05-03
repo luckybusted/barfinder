@@ -67,8 +67,8 @@ class SubRoot extends Component {
                     .then((response) => {
                         //let loc = response.loc.split(','),
                         let coords = {
-                                latitude: response.lat,
-                                longitude: response.lon
+                                latitude: response.latitude,
+                                longitude: response.longitude
                             };
                         this.success(coords);
                     })
