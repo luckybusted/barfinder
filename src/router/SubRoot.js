@@ -21,6 +21,7 @@ class SubRoot extends Component {
             params: props.match
         };
         this.success = this.success.bind(this);
+        this.failed = this.failed.bind(this);
         this.getPosition = this.getPosition.bind(this);
     }
 
@@ -40,6 +41,10 @@ class SubRoot extends Component {
         this.props.apiCall(params);
 
     }
+
+    failed(err){
+        console.log('SOMETHING WENT WRONG', err);
+    };
 
     getPosition(posOptions) {
         return new Promise(function (resolve, reject) {
@@ -71,6 +76,9 @@ class SubRoot extends Component {
                                 longitude: response.longitude
                             };
                         this.success(coords);
+                    })
+                    .catch((err) => {
+                        this.failed(err);
                     })
             });
 

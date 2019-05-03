@@ -81,25 +81,30 @@ class LocationDetail extends Component {
                 <div key={'container'} className="container">
                     <h2>{detailData.name}</h2>
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-12 d-flex justify-content-between">
                             <p className="price">{detailData.price}</p>
                             <p className="rating">
                                 <span className="ratingStars"
                                       style={{width: 18 * detailData.rating}}/>{detailData.rating}</p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-6">
+                            <p>
+                                {detailData.location ? detailData.location.address1 : ''}<br/>
+                                {detailData.location ? detailData.location.zip_code : ''} {detailData.location ? detailData.location.city : ''}<br/>
+                                {detailData.display_phone}
+                            </p>
                         </div>
                         <div
                             className={`col-6 opening ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
                             {detailData.hours ? (detailData.hours[0].is_open_now ? 'Geöffnet' : 'Geschlossen') : ''}
                         </div>
                     </div>
-                    <p>
-                        {detailData.location ? detailData.location.address1 : ''}<br/>
-                        {detailData.location ? detailData.location.zip_code : ''} {detailData.location ? detailData.location.city : ''}<br/>
-                        {detailData.display_phone}
-                    </p>
+
 
                     <a href={`http://maps.google.de/maps?q=${detailData.coordinates.latitude},${detailData.coordinates.longitude}&z=19`}
-                       className="btn py-3 btn-block btn-primary">Route anzeigen</a>
+                       className="btn my-4 py-3 btn-block btn-primary">Route anzeigen</a>
 
                 </div>
             ]

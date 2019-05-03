@@ -34,7 +34,7 @@ class LocationsList extends Component {
                     </Link>
                     <div className="card-body">
                         <div className="row">
-                            <div className="col-9">
+                            <div className="col-12">
                                 <p className="address">{item.location.address1}</p>
                                 <Link className="name" to={{
                                     pathname: '/LocationDetail',
@@ -42,13 +42,14 @@ class LocationsList extends Component {
                                     state: {
                                         feelingLucky: false
                                     }
-                                }}><h3>{item.name}</h3></Link>
+                                }}><h3 className='my-3'>{item.name}</h3></Link>
+                            </div>
+                            <div className="col-12 d-flex justify-content-between">
                                 <p className="rating">
                                     <span className="ratingStars" style={{width: 18*item.rating}}/>({item.review_count})</p>
-                            </div>
-                            <div className="col-3">
-                                <p className="distance">{Math.floor(item.distance)} m</p>
+
                                 <p className="price">{item.price}</p>
+                                <p className="distance">{Math.floor(item.distance)} m</p>
                             </div>
 
                         </div>

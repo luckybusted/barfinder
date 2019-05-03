@@ -7788,7 +7788,8 @@ template {
     -webkit-transform: rotate(-3deg);
     transform: rotate(-3deg);
     font-size: 50px;
-    padding: 40px 0; }
+    padding: 40px 0;
+    font-weight: 900; }
     .home-header .sign #title {
       font-size: 110px; }
     .home-header .sign #fade {

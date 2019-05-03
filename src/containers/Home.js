@@ -22,17 +22,17 @@ class Home extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-sm-6 mb-4">
                         <Link to={{
                             pathname: '/LocationDetail',
                             state: {
                                 feelingLucky: true
                             }
-                        }} className="btn btn-block btn-primary btn-lg">Auf gut Glück</Link>
+                        }} className="btn btn-block text-uppercase p-4 btn-primary btn-lg">Auf gut Glück</Link>
                     </div>
-                    <div className="col-6">
+                    <div className="col-sm-6">
                         <Link to="/LocationsOverview"
-                              className="btn btn-block btn-primary btn-lg">Bars Suchen</Link>
+                              className="btn btn-block text-uppercase p-4 btn-primary btn-lg">Bars Suchen</Link>
                     </div>
                 </div>
                 {showSpinner &&
