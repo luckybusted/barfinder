@@ -106,7 +106,7 @@ class LocationDetail extends Component {
 
 
                     <a href={`http://maps.google.de/maps?q=${detailData.coordinates.latitude},${detailData.coordinates.longitude}&z=19`}
-                       className="btn my-4 py-3 btn-block btn-primary">Route anzeigen</a>
+                       className="btn my-4 py-3 btn-block btn-primary text-uppercase">Route anzeigen</a>
 
                 </div>
             ]

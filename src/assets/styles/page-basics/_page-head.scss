@@ -9,24 +9,24 @@
       font-family: 'Nixie One', Helvetica, Arial, sans-serif;
       #fade {
         opacity: 0.8;
-        color: #ebffff;
+        color: rgb(0, 180, 230) ;
         -webkit-animation: fade 3s infinite alternate;
         -moz-animation: fade 3s infinite alternate;
         -o-animation: fade 3s infinite alternate;
         animation: fade 3s infinite alternate;
       }
-      #trav {
+      /* #trav {
         -webkit-animation: blink 0.01s infinite alternate;
         -moz-animation: blink 0.01s infinite alternate;
         -o-animation: blink 0.01s infinite alternate;
         animation: blink 0.01s infinite alternate;
-      }
+      } */
       .neon-blue {
-        color: #ebffff;
+        color: rgb(0, 180, 230) ;
       }
       .neon-purple {
         font-family: 'League Script', Helvetica, Arial, sans-serif;
-        color: #ccf;
+        color: rgb(230, 0, 120);
       }
     }
 
@@ -52,19 +52,19 @@
     }
 
     #fade {
-      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff;
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px rgb(0, 180, 230), 0 0 10px rgb(0, 180, 230) , 0 0 50px rgb(0, 180, 230) ;
     }
     .neon-blue {
       margin: 0 auto;
       line-height: 1em;
       text-align: center;
-      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff;
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px rgb(0, 180, 230), 0 0 10px rgb(0, 180, 230) , 0 0 50px rgb(0, 180, 230) ;
     }
     .neon-purple {
       font-size: 100px;
       margin: 0 auto;
       text-align: center;
-      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 20px #fff, 0 0 10px #7d26cd, 0 0 50px #7d26cd;
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 20px #fff, 0 0 10px rgb(120, 0, 50), 0 0 50px rgb(120, 0, 50);
     }
   }
 }

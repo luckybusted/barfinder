@@ -7747,36 +7747,36 @@ template {
 /* '' */
 .btn-primary {
   background: #000;
-  border: #ebffff;
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff; }
+  border: 3px solid #00b4e6;
+  box-shadow: 0 0 15px -1px #00b4e6, 0 0 12px -1px #00b4e6 inset; }
 
 .home-header .logo,
 .header .logo {
   text-decoration: none; }
   .home-header .logo .sign,
   .header .logo .sign {
-    font-family: 'Nixie One', Helvetica, Arial, sans-serif; }
+    font-family: 'Nixie One', Helvetica, Arial, sans-serif;
+    /* #trav {
+        -webkit-animation: blink 0.01s infinite alternate;
+        -moz-animation: blink 0.01s infinite alternate;
+        -o-animation: blink 0.01s infinite alternate;
+        animation: blink 0.01s infinite alternate;
+      } */ }
     .home-header .logo .sign #fade,
     .header .logo .sign #fade {
       opacity: 0.8;
-      color: #ebffff;
+      color: #00b4e6;
       -webkit-animation: fade 3s infinite alternate;
       -moz-animation: fade 3s infinite alternate;
       -o-animation: fade 3s infinite alternate;
       animation: fade 3s infinite alternate; }
-    .home-header .logo .sign #trav,
-    .header .logo .sign #trav {
-      -webkit-animation: blink 0.01s infinite alternate;
-      -moz-animation: blink 0.01s infinite alternate;
-      -o-animation: blink 0.01s infinite alternate;
-      animation: blink 0.01s infinite alternate; }
     .home-header .logo .sign .neon-blue,
     .header .logo .sign .neon-blue {
-      color: #ebffff; }
+      color: #00b4e6; }
     .home-header .logo .sign .neon-purple,
     .header .logo .sign .neon-purple {
       font-family: 'League Script', Helvetica, Arial, sans-serif;
-      color: #ccf; }
+      color: #e60078; }
 
 .home-header {
   height: 60vh;
@@ -7793,17 +7793,17 @@ template {
     .home-header .sign #title {
       font-size: 110px; }
     .home-header .sign #fade {
-      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff; }
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #00b4e6, 0 0 10px #00b4e6, 0 0 50px #00b4e6; }
     .home-header .sign .neon-blue {
       margin: 0 auto;
       line-height: 1em;
       text-align: center;
-      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff; }
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #00b4e6, 0 0 10px #00b4e6, 0 0 50px #00b4e6; }
     .home-header .sign .neon-purple {
       font-size: 100px;
       margin: 0 auto;
       text-align: center;
-      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 20px #fff, 0 0 10px #7d26cd, 0 0 50px #7d26cd; }
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 20px #fff, 0 0 10px #780032, 0 0 50px #780032; }
 
 .header {
   background: #343a40;

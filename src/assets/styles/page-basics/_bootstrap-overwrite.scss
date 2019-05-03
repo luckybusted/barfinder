@@ -1,7 +1,8 @@
 .btn {
   &-primary {
     background: $black;
-    border: #ebffff;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3), 0 0 15px #fff, 0 0 10px #38eeff, 0 0 50px #38eeff;
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 0 0 12px -1px rgb(0, 180, 230) inset;
   }
 }
+

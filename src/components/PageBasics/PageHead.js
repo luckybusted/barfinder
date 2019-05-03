@@ -29,7 +29,7 @@ class PageHead extends Component {
                 <Link to="/" className="logo">
                     <div className="sign">
                         <div className="neon-blue" id="title">B<span id="fade">ar</span> </div>
-                        <div className="neon-blue"> <span className="neon-purple" id="trav">Finder</span></div>
+                        <div className="neon-blue"> <span className="neon-purple">Finder</span></div>
                     </div>
                 </Link>
                 {home ? '' :
