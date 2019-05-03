@@ -9,7 +9,8 @@ import {
     FILTER_TOGGLE,
     CHANGE_OPEN,
     CHANGE_RADIUS,
-    CHANGE_PRICE
+    CHANGE_PRICE,
+    NO_LOCATION
 } from './action-types';
 
 import api from '../utils/api';
@@ -33,6 +34,12 @@ export function apiCall(params){
             .catch(err => {
                 dispatch({type: DATA_ERROR, errors: err});
             });
+    }
+}
+
+export function noLocation(){
+    return {
+        type: NO_LOCATION
     }
 }
 

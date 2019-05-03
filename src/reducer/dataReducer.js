@@ -10,7 +10,7 @@ import {
     RECEIVED_DETAILDATA,
     SET_ENV,
     CHANGE_OPEN,
-    CHANGE_RADIUS, CHANGE_PRICE
+    CHANGE_RADIUS, CHANGE_PRICE, NO_LOCATION
 } from '../actions/action-types';
 
 
@@ -20,6 +20,7 @@ const initialState = {
     showDataLoader: true,
     showDetailLoader: true,
     showLocationLoader: true,
+    noLocation: false,
     env: '',
     apiData: {},
     detailData: {},
@@ -65,9 +66,17 @@ const dataReducer = (state = initialState, action) => {
                 showLocationLoader: true
             };
 
+        case NO_LOCATION:
+            return {
+                ...state,
+                noLocation: true,
+                showLocationLoader: false
+            };
+
         case SET_LOCATION:
             return {
                 ...state,
+                noLocation: false,
                 userLocation: action.value,
                 searchParams: {
                     ...state.searchParams,

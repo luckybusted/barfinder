@@ -44,6 +44,7 @@ class SubRoot extends Component {
 
     failed(err){
         console.log('SOMETHING WENT WRONG', err);
+        this.props.noLocation();
     };
 
     getPosition(posOptions) {
@@ -118,6 +119,7 @@ export default ReactRedux.connect(
     (state) => ({}),
     (dispatch) => ({
         setLocation: (location) => dispatch(actions.setLocation(location)),
-        apiCall: (params) => dispatch(actions.apiCall(params))
+        apiCall: (params) => dispatch(actions.apiCall(params)),
+        noLocation: () => dispatch(actions.noLocation())
     })
 )(SubRoot);
