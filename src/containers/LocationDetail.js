@@ -12,7 +12,8 @@ class LocationDetail extends Component {
         this.state = {
             props: props,
             params: props.match,
-            image: ''
+            image: '',
+            feelingLucky: this.props.location.state.feelingLucky
         };
         this.renderDetails = this.renderDetails.bind(this);
         this.setDetailId = this.setDetailId.bind(this);
@@ -22,12 +23,15 @@ class LocationDetail extends Component {
     setDetailId() {
 
         let search = window.location.search.substring(1),
-            searchParams = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) });
+            searchParams = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g, '":"') + '"}', function (key, value) {
+                return key === "" ? value : decodeURIComponent(value)
+            });
 
         this.props.detailCallAction(searchParams.id);
     }
 
     gamble(nextProps) {
+
         let apiData = nextProps ? nextProps.apiData.businesses : this.props.apiData.businesses;
 
         if (apiData) {
@@ -46,7 +50,8 @@ class LocationDetail extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.apiData !== nextProps.apiData) {
+
+        if (this.props.apiData !== nextProps.apiData && this.state.feelingLucky) {
             this.gamble(nextProps);
         }
     }
@@ -54,8 +59,7 @@ class LocationDetail extends Component {
     componentDidMount() {
         let detailData = this.props.detailData;
 
-        const {feelingLucky} = this.props.location.state;
-        !feelingLucky ? this.setDetailId() : this.gamble();
+        this.state.feelingLucky ? this.gamble() : this.setDetailId();
 
         if (detailData.photos) {
             this.setState({image: detailData.photos[0]});
@@ -84,7 +88,7 @@ class LocationDetail extends Component {
                                       style={{width: 18 * detailData.rating}}/>{detailData.rating}</p>
                         </div>
                         <div
-                            className={`col-6 ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
+                            className={`col-6 opening ${detailData.hours ? (detailData.hours[0].is_open_now ? 'alert-success' : 'alert-danger') : ''}`}>
                             {detailData.hours ? (detailData.hours[0].is_open_now ? 'Geöffnet' : 'Geschlossen') : ''}
                         </div>
                     </div>
@@ -95,7 +99,7 @@ class LocationDetail extends Component {
                     </p>
 
                     <a href={`http://maps.google.de/maps?q=${detailData.coordinates.latitude},${detailData.coordinates.longitude}&z=19`}
-                       className="btn btn-block btn-primary">Route anzeigen</a>
+                       className="btn py-3 btn-block btn-primary">Route anzeigen</a>
 
                 </div>
             ]
