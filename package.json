@@ -28,7 +28,7 @@
     "yelp-api": "^1.0.3"
   },
   "devDependencies": {
-    "react-scripts": "1.1.5"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
